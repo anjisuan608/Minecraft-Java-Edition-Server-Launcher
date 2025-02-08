@@ -95,16 +95,20 @@
 <p>若设置变量为"nogui"则为始终不显示服务器GUI</p>
 <br>
 
-## 经过测试的服务器核心
+## 支持的服务器核心
 ### Vanilla
 <p>原版服务器核心</p>
 <p><a href="https://www.minecraft.net/zh-hans/download/server" title="Vanilla">Minecraft官网</a></p>
 <br>
 
 ### PaperMC
-<p>Paper 是一款基于 Spigot 的 Minecraft 游戏服务器，旨在大大提高性能并提供更高级的功能和 API</p>
-<p><a href="papermc.io" title="PaperMC">PaperMC核心官网</a></p>
+<p>PaperMC 通过快速、安全的软件和不断扩展的插件 API 改进了 Minecraft 的生态系统，作为使用最广泛、性能最强和最稳定的软件，提供快速发布和有用的支持。</p>
+<p><a href="https://papermc.io/" title="PaperMC">PaperMC核心官网</a></p>
 <br>
+
+### Purpur
+<p>Purpur 是基于 Paper 的 Minecraft 服务器软件。<br>它支持为 Bukkit、Spigot 和 Paper API 设计的插件。<br>Purpur 专注于提供尽可能多的可配置性，以允许服务器所有者根据自己的喜好自定义他们的服务器。</p>
+<p><a href="https://purpurmc.org/" title="Purpur">Purpur核心官网</a></p>
 
 ### SpongeVanilla
 <p><a href="https://spongepowered.org/downloads/spongevanilla" title="海绵香草">海绵原版端</a></p>
