@@ -109,6 +109,7 @@
 ### Purpur
 <p>Purpur 是基于 Paper 的 Minecraft 服务器软件。<br>它支持为 Bukkit、Spigot 和 Paper API 设计的插件。<br>Purpur 专注于提供尽可能多的可配置性，以允许服务器所有者根据自己的喜好自定义他们的服务器。</p>
 <p><a href="https://purpurmc.org/" title="Purpur">Purpur核心官网</a></p>
+<br>
 
 ### SpongeVanilla
 <p><a href="https://spongepowered.org/downloads/spongevanilla" title="海绵香草">海绵原版端</a></p>
@@ -126,19 +127,23 @@
 <br>
 
 ### Fabric
+<p>Fabric 官方服务器核心</p>
 <p><a href="https://fabricmc.net/use/" title="Fabric Server">Fabric官网</a></p>
 <br>
 
 ### Quilt
+<p>Quilt 官方服务器核心</p>
 <p><a href="https://quiltmc.org/install/" title="Quilt Server">Quilt官网</a></p>
 <br>
 
 ### Forge
+<p>Forge 官方服务器核心</p>
 <p><a href="https://files.minecraftforge.net/" title="Forge">Forge官网</a></p>
 <p>注:部分版本的服务器核心(jar)文件部署后存放于libraries文件夹下的版本请参考批处理注释完成配置</p>
 <br>
 
 ### NeoForge
+<p>NeoForge 官方服务器核心</p>
 <p><a href="https://projects.neoforged.net/neoforged/neoforge" title="NeoForge">NeoForge官网</a></p>
 <p>注:该核心的jar文件部署后存放于libraries文件夹下，请参考批处理注释完成配置</p>
 <br>
