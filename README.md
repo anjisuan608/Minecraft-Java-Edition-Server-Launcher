@@ -73,8 +73,8 @@
 <p>复制当中的<strong>"@libraries/net/xxxforge/xxxforge/x.x.x-xx.xx.xx/win_args.txt"</strong>字段</p>
 <p>粘贴到下方ServerTXT变量的等号后面</p>
 <p><strong>注:请务必看清文件扩展(后缀)名!当中的<em>run.sh</em>文件适用于<strong>Linux</strong>平台,请勿复制该文件的字段!</strong></p>
-<p><em>开启文件扩展名显示:文件夹选项-->查看,在下方的选项框中找到"隐藏已知文件类型的扩展名"取消勾选,应用并确定</em></p>
-<p><strong>注:当<em>%ServerJar%</em>变量有内容时, <em>ServerTXT</em>变量不生效</strong></p>
+<p><em>开启文件扩展名显示 :文件夹选项 -->查看 ,在下方的选项框中找到 "隐藏已知文件类型的扩展名 "取消勾选 ,应用并确定</em></p>
+<p><strong>注:当<em>%ServerJar%</em>变量有内容时,<em>%ServerTXT%</em>变量不生效</strong></p>
 <br>
 
 ### 内存设置
