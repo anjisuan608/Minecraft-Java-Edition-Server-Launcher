@@ -121,6 +121,11 @@
 <p>注:部分版本的服务器核心(jar)文件部署后存放于libraries文件夹下的版本请参考批处理注释完成配置</p>
 <br>
 
+### Bukkit
+<p><a href="https://getbukkit.org/download/craftbukkit" title="CraftBukkit">CraftBukkit</a></p>
+<p><a href="https://getbukkit.org/download/spigot/" title="Spigot">Spigot</a></p>
+<br>
+
 ### CatServer
 <p>高性能和高兼容性的1.12.2/1.16.5/1.18.2版本Forge+Bukkit+Spigot服务端</p>
 <p><a href="https://catmc.org/" title="CatServer">CatServer核心官网</a></p>
