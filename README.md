@@ -156,7 +156,7 @@
 ### Mohist
 <p><a href="https://mohistmc.com/" title="Mohist">Mohist官网</a></p>
 <p>注:部分版本的服务器核心(jar)文件部署后存放于libraries文件夹下的版本请参考批处理注释完成配置</p>
-<p>警告:尚未测试该核心的可用性，请移步本项目的<a href="#%E7%AC%AC%E4%B8%89%E6%96%B9python%E7%89%88%E6%9C%AC%E5%AE%9E%E9%AA%8C%E6%80%A7" title="第三方Python版本">第三方Python版本</a>，<br>开发者已完成对Mohist核心及其Fabric/NeoForge版本的启动测试</p>
+<p>警告:尚未测试该核心与启动批处理的可用性与兼容性，建议移步本项目的<a href="#%E7%AC%AC%E4%B8%89%E6%96%B9python%E7%89%88%E6%9C%AC%E5%AE%9E%E9%AA%8C%E6%80%A7" title="第三方Python版本">第三方Python版本</a>以获得支持，<br>开发者已完成对Mohist核心及其Fabric/NeoForge版本的启动测试!</p>
 <br>
 
 ## 第三方Python版本(实验性)
