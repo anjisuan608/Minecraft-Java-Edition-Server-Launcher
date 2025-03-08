@@ -1,20 +1,22 @@
 # SakuraMaple我的世界Java版服务器启动批处理
 <p><strong>警告:该批处理仅适用于Windows平台!不适用于Linux、Unix、MacOS等平台!</strong></p>
 
-## 项目仓库(存储库)
+## 项目仓库(存储库)与项目文件下载
 
-<p>若访问缓慢可尝试前往以下站点的项目仓库:</p>
+<p>若访问缓慢,可尝试前往以下站点的项目仓库查看/下载项目文件:</p>
 <ul>
-  <li>GitHub: <a href="https://github.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher" title="GieCode">GitHub项目地址</a></li>
-  <li>Gitee: <a href="https://gitee.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher" title="GieCode">Gitee项目地址</a></li>
-  <li>GitCode: <a href="https://gitcode.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher" title="GieCode">GitCode项目地址</a></li>
+  <li>GitHub: <a href="https://github.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher" title="GieHub">GitHub项目地址</a>&ensp;<a href="https://github.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/releases/" title="GitHub-Releases">GitHub仓库下载</a>&emsp;</li>
+  <li>Gitee: <a href="https://gitee.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher" title="Gitee">Gitee仓库地址</a>&ensp;<a href="https://github.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/releases/" title="Gitee-Releases">Gitee仓库下载</a>&emsp;</li>
+  <li>GitCode: <a href="https://gitcode.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher" title="GitCode">GitCode项目地址</a>&ensp;<a href="https://github.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/releases/" title="GitCode-Releases">GitCode仓库下载</a>&emsp;</li>
   <li>GitLab:(停止维护)</li>
   <li>JiHuLab:(暂无)</li>
 </ul>
 
+<!--
 ## 下载文件
 
 <p><a href="./run-SM.cmd" title="Download">点击跳转到项目内文件目录下载</a></p>
+-->
 
 ## 跨平台支持(实验性)
 
