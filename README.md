@@ -12,11 +12,9 @@
   <li>JiHuLab:(暂无)</li>
 </ul>
 
-<!--
-## 下载文件
+## 核心列表
 
-<p><a href="./run-SM.cmd" title="Download">点击跳转到项目内文件目录下载</a></p>
--->
+<p><a href="#%E6%94%AF%E6%8C%81%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%A0%B8%E5%BF%83" title="Server Core List">跳转至核心列表</a></p>
 
 ## 跨平台支持(实验性)
 
@@ -101,6 +99,11 @@
 ### Vanilla
 <p>原版服务器核心</p>
 <p><a href="https://www.minecraft.net/zh-hans/download/server" title="Vanilla">Minecraft官网</a></p>
+<br>
+
+### LeavesMC
+<p>LeavesMC 改善了 Minecraft 的生态系统，提供快速、安全和稳定的软件，作为最特立独行的组织提供快速迭代和健康支持。</p>
+<p><a href="https://leavesmc.org/" title"LeavesMC">LeavesMC官网</a></p>
 <br>
 
 ### PaperMC
