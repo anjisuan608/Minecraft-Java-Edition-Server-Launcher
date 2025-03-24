@@ -104,58 +104,69 @@
 ### LeavesMC
 <p>LeavesMC 改善了 Minecraft 的生态系统，提供快速、安全和稳定的软件，作为最特立独行的组织提供快速迭代和健康支持。</p>
 <p><a href="https://leavesmc.org/" title"LeavesMC">LeavesMC官网</a></p>
+<p><a href="https://leavesmc.org/downloads/leaves" title"Leaves">Leaves 下载</a></p>
+<p><a href="https://leavesmc.org/software/lumina" title"Lumina">Lumina 简介</a></p>
 <br>
 
 ### PaperMC
 <p>PaperMC 通过快速、安全的软件和不断扩展的插件 API 改进了 Minecraft 的生态系统，作为使用最广泛、性能最强和最稳定的软件，提供快速发布和有用的支持。</p>
 <p><a href="https://papermc.io/" title="PaperMC">PaperMC核心官网</a></p>
+<p><a href="https://papermc.io/downloads/paper" title"Paper">Paper 下载</a></p>
+<p><a href="https://papermc.io/software/folia" title"Folia">Folia 简介</a></p>
 <br>
 
 ### Purpur
 <p>Purpur 是基于 Paper 的 Minecraft 服务器软件。<br>它支持为 Bukkit、Spigot 和 Paper API 设计的插件。<br>Purpur 专注于提供尽可能多的可配置性，以允许服务器所有者根据自己的喜好自定义他们的服务器。</p>
 <p><a href="https://purpurmc.org/" title="Purpur">Purpur核心官网</a></p>
+<p><a href="https://purpurmc.org/download/purpur" title"Purpur">Purpur 下载</a></p>
 <br>
 
-### SpongeVanilla
-<p><a href="https://spongepowered.org/downloads/spongevanilla" title="海绵香草">海绵原版端</a></p>
+### Sponge
+<p><a href="https://spongepowered.org/downloads/" title="海绵端官网下载站">海绵端官网(汇总)下载站</a></p>
+<p><a href="https://spongepowered.org/downloads/spongevanilla" title="海绵香草">海绵原版(香草)(SpongeVanilla)端官网-下载站</a></p>
+<p><a href="https://spongepowered.org/downloads/spongeneo" title="海绵新">海绵新(SpongeNeo)端官网-下载站</a></p>
+<p><a href="https://spongepowered.org/downloads/spongeforge" title="海绵锻造">海绵锻造(SpongeForge)端官网-下载站</a></p>
 <br>
 
 ### ArcLight
 <p>使用 Mixin 在模组环境中实现 Bukkit 服务器</p>
-<p><a href="https://github.com/IzzelAliz/Arclight" title="ArcLight">ArcLight核心GitHub仓库</a></p>
+<p><a href="https://github.com/IzzelAliz/Arclight" title="ArcLight">ArcLight 核心GitHub仓库</a></p>
+<p><a href="https://arclight.izzel.io/" title="ArcLight">ArcLight 核心构建站(下载站)</a></p>
 <p>注:部分版本的服务器核心(jar)文件部署后存放于libraries文件夹下的版本请参考批处理注释完成配置</p>
 <br>
 
 ### Bukkit
-<p><a href="https://getbukkit.org/download/craftbukkit" title="CraftBukkit">CraftBukkit</a></p>
-<p><a href="https://getbukkit.org/download/spigot/" title="Spigot">Spigot</a></p>
+<p><a href="https://getbukkit.org/download/craftbukkit" title="CraftBukkit">CraftBukkit 官网-下载站</a></p>
+<p><a href="https://getbukkit.org/download/spigot/" title="Spigot">Spigot 官网-下载站</a></p>
 <br>
 
 ### CatServer
-<p>高性能和高兼容性的1.12.2/1.16.5/1.18.2版本Forge+Bukkit+Spigot服务端</p>
-<p><a href="https://catmc.org/" title="CatServer">CatServer核心官网</a></p>
+<p>高性能和高兼容性的1.12.2/1.16.5/1.18.2版本Forge+Bukkit+Spigot 服务端</p>
+<p><a href="https://catmc.org/" title="CatServer">CatServer 核心官网</a></p>
 <br>
 
 ### Fabric
 <p>Fabric 官方服务器核心</p>
-<p><a href="https://fabricmc.net/use/" title="Fabric Server">Fabric官网</a></p>
+<p><a href="https://fabricmc.net/" title="Fabric">Fabric 官网</a></p>
+<p><a href="https://fabricmc.net/use/installer/" title="Fabric Server">Fabric 下载</a></p>
 <br>
 
 ### Quilt
 <p>Quilt 官方服务器核心</p>
-<p><a href="https://quiltmc.org/install/" title="Quilt Server">Quilt官网</a></p>
-<br>
-
-### Forge
-<p>Forge 官方服务器核心</p>
-<p><a href="https://files.minecraftforge.net/" title="Forge">Forge官网</a></p>
-<p>注:部分版本的服务器核心(jar)文件部署后存放于libraries文件夹下的版本请参考批处理注释完成配置</p>
+<p><a href="https://quiltmc.org/install/" title="Quilt Server">Quilt 官网</a></p>
+<p><a href="https://quiltmc.org/install/server/" title="Quilt Server">Quilt 下载</a></p>
 <br>
 
 ### NeoForge
 <p>NeoForge 官方服务器核心</p>
-<p><a href="https://projects.neoforged.net/neoforged/neoforge" title="NeoForge">NeoForge官网</a></p>
+<p><a href="https://projects.neoforged.net/neoforged/neoforge" title="NeoForge">NeoForge 官网-下载站</a></p>
 <p>注:该核心的jar文件部署后存放于libraries文件夹下，请参考批处理注释完成配置</p>
+<br>
+
+### Forge
+<p>Forge 官方服务器核心</p>
+<p><a href="https://files.minecraftforge.net/" title="Forge">Forge 官网-下载站</a></p>
+<p>注:部分版本的服务器核心(jar)文件部署后存放于libraries文件夹下的版本请参考批处理注释完成配置</p>
 <br>
 
 ### Mohist
