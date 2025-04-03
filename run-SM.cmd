@@ -915,9 +915,9 @@ echo 键入"l"使用certutil方案从官方下载源下载(适用于PowerShell不可用时)
 echo 键入"u"返回上一级菜单
 echo 键入"x"退出批处理
 choice /C oblux /CS
-if %errorlevel% == 1 powershell -Command "Invoke-WebRequest -Uri https://bmclapi2.bangbang93.com/mirrors/authlib-injector/artifact/53/authlib-injector-1.2.5.jar -OutFile .\authlib-injector-1.2.5.jar" && goto CheckAuthJar
-if %errorlevel% == 2 powershell -Command "Invoke-WebRequest -Uri https://authlib-injector.yushi.moe/artifact/53/authlib-injector-1.2.5.jar -OutFile .\authlib-injector-1.2.5.jar" && goto CheckAuthJar
-if %errorlevel% == 3 certutil -urlcache -split -f https://authlib-injector.yushi.moe/artifact/53/authlib-injector-1.2.5.jar .\authlib-injector-1.2.5.jar && goto CheckAuthJar
+if %errorlevel% == 1 powershell -Command "Invoke-WebRequest -Uri https://bmclapi2.bangbang93.com/mirrors/authlib-injector/artifact/53/authlib-injector-1.2.5.jar -OutFile .\authlib-injector-1.2.5.jar" && goto AuthLibCheck
+if %errorlevel% == 2 powershell -Command "Invoke-WebRequest -Uri https://authlib-injector.yushi.moe/artifact/53/authlib-injector-1.2.5.jar -OutFile .\authlib-injector-1.2.5.jar" && goto AuthLibCheck
+if %errorlevel% == 3 certutil -urlcache -split -f https://authlib-injector.yushi.moe/artifact/53/authlib-injector-1.2.5.jar .\authlib-injector-1.2.5.jar && goto AuthLibCheck
 if %errorlevel% == 4 goto bc
 if %errorlevel% == 5 goto x
 color %colorError%
