@@ -7,7 +7,8 @@
 <ul>
   <li>GitHub: <a href="https://github.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher" title="GieHub">GitHub项目地址</a>&ensp;<a href="https://github.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/releases/" title="GitHub-Releases">GitHub仓库下载</a>&emsp;</li>
   <li>GitCode: <a href="https://gitcode.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher" title="GitCode">GitCode项目地址</a>&ensp;<a href="https://gitcode.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/releases/" title="GitCode-Releases">GitCode仓库下载</a>&emsp;</li>
-  <li>Gitee: <a href="https://gitee.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher" title="Gitee">Gitee项目地址</a>&ensp;<a href="https://gitee.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/releases/" title="Gitee-Releases">Gitee仓库下载</a>&emsp;(存储库同步将于2025年03月27日 00:00 (UTC+8)恢复正常)</li>
+  <li>Gitee: <a href="https://gitee.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher" title="Gitee">Gitee项目地址</a>&ensp;<a href="https://gitee.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/releases/" title="Gitee-Releases">Gitee仓库下载</a>&emsp;</li>
+  <li>AtomGit: <a href="https://atomgit.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher" title="AtomGit">AtomGit项目地址</a>&ensp;<a href="https://atomgit.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/tags?tab=release" title="AtomGit-Tag=Release">AtomGit仓库下载</a>&emsp;</li>
   <li>GitLab:(停止维护)</li>
   <li>JiHuLab:(暂无)</li>
 </ul>
