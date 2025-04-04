@@ -47,6 +47,15 @@
 <p>若许可协议存在，但处于false状态会引导用户确认是否通过批处理写入true</p>
 <br>
 
+### server.properties文件online-mode相关检测
+<p>在启用第三方认证时，将会检测online-mode状态</p>
+<ol>
+  <li>如果online-mode不存在，则添加online-mode=true</li>
+  <li>如果online-mode=false，则修改online-mode=true</li>
+  <li>如果online-mode后面没有值，则将online-mode设置为true</li>
+</ol>
+<br>
+
 ### 服务器GUI窗口显示/隐藏(仅部分核心可用)
 <p>可以通过批处理实现控制部分服务器核心的GUI是否显示</p>
 <br>
