@@ -586,6 +586,31 @@ color %colorRunning%
 ::清空首次启动配置信息
 if "%FirstStart%" neq "" set "FirstStart="
 cls
+
+:CheckServer-properties
+if exist .\server.properties (
+    goto CheckAuthURL
+) else (
+    goto rs
+)
+
+:CheckAuthURL
+if "%AuthURL%" == "" (
+    goto rs
+) else (
+    goto CheckServer-propertiesOnlineMode
+)
+
+:CheckServer-propertiesOnlineMode
+findstr "online-mode=true" .\server.properties >nul
+if %errorlevel% == 0 (
+    goto rs
+) else (
+    goto ChoiceModifyServer-properties
+)
+
+:rs
+
 ::服务器参数引导
 echo 警告:
 echo 请勿在服务器正常运行中强行关闭!
@@ -1150,6 +1175,70 @@ echo ************************发生异常************************
 pause
 
 goto DeleteEulaError
+
+:ChoiceModifyServer-properties
+echo 当前第三方认证状态已启用,请注意:
+echo 检测到server.properties文件中online-mode=false或不存在online-mode配置!
+echo 认证服务器将不生效!
+echo 是否要修改为online-mode=true?
+echo 键入"y"修改,键入"n"不修改并继续启动(不启用认证-离线模式),键入"x"退出批处理
+choice /C yn /CS
+if %errorlevel% == 1 goto ModifyServer-properties
+if %errorlevel% == 2 goto rs
+if %errorlevel% == 3 goto x
+
+color %colorError%
+
+title Error-XE-SakuraMaple_MCSL-vX-Preview
+
+echo ************************发生异常************************
+
+pause
+
+goto ChoiceModifyServer-properties
+
+:ModifyServer-properties
+::修改server.properties文件online-mode=true
+:: 检测server.properties文件中的online-mode配置
+findstr "online-mode=" .\server.properties >nul
+if %errorlevel% == 1 (
+    goto AddOnlineMode
+) else (
+    findstr "online-mode=$" .\server.properties >nul
+    if %errorlevel% == 0 (
+        goto SetOnlineMod
+    ) else (
+        findstr "online-mode=false" .\server.properties >nul
+        if %errorlevel% == 0 (
+            goto ModifyOnlineMod
+        ) else (
+            echo 未知的online-mode配置!
+            echo 请手动检查server.properties文件中的online-mode配置,本次服务器将继续启动
+            goto rs
+        )
+    )
+)
+
+:AddOnlineMode
+::server.properties文件中没有online-mode配置
+echo online-mode=true >> .\server.properties
+echo 已成功添加online-mode=true到server.properties文件!
+timeout /t 3
+goto CheckServer-propertiesOnlineMode
+
+:SetOnlineMod
+::server.properties文件中online-mode配置为true
+(findstr /v "online-mode=" .\server.properties && echo online-mode=true) > .\server.properties.tmp && move /y .\server.properties.tmp .\server.properties
+echo 已成功设置online-mode=true到server.properties文件!
+timeout /t 3
+goto CheckServer-propertiesOnlineMode
+
+:ModifyOnlineMod
+::server.properties文件中online-mode配置为false
+(for /f "tokens=*" %%i in ('.\server.properties') do @echo %%i | findstr /v "online-mode=false" >nul || echo online-mode=true) > .\server.properties.tmp && move /y .\server.properties.tmp .\server.properties
+echo 已成功将online-mode=false修改为online-mode=true到server.properties文件!
+timeout /t 3
+goto CheckServer-propertiesOnlineMode
 
 :SystemInformation
 color %colorChoose%
