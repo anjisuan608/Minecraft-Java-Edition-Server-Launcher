@@ -200,6 +200,7 @@
   <li>GitHub: <a href="https://github.com/Steverjava/" title="Steverjava's GitHub user profile">开发者主页</a> <a href="https://github.com/Steverjava/Minecraft-Server-Launcher" title="Steverjava's GitHub Project profile">项目仓库</a></li>
   <li>Gitee: <a href="https://gitee.com/Steverjava/" title="Steverjava's Gitee user profile">开发者主页</a> <a href="https://gitee.com/Steverjava/Minecraft-Server-Launcher" title="Steverjava's Gitee Project profile">项目仓库</a></li>
   <li>GitCode: <a href="https://gitcode.com/Steverjava/" title="Steverjava's GitCode user profile">开发者主页</a> <a href="https://gitcode.com/Steverjava/Minecraft-Server-Launcher" title="Steverjava's GitCode Project profile">项目仓库</a></li>
+  <li>AtomGit: <em>敬请期待</em></li>
 </ul>
 
 
