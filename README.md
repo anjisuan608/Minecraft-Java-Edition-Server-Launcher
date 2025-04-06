@@ -1,4 +1,4 @@
-# SakuraMaple我的世界Java版服务器启动批处理
+# 我的世界Java版服务器启动批处理(命令提示符脚本)
 <p><strong>警告:该批处理仅适用于Windows平台!不适用于Linux、Unix、MacOS等平台!</strong></p>
 
 ## 项目仓库(存储库)与项目文件下载
