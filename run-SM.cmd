@@ -1,101 +1,94 @@
-::SakuraMaple Studio &copy; 2020-2024
+@REM copyright (c) 2025 anjisuan608
 @echo off
-::ÈôÎÄ×Ö²»ÄÜÕı³£ÏÔÊ¾
-::If the text cannot be displayed properly
-::ÇëÊ¹ÓÃGB 2312±àÂë²é¿´ºÍ±à¼­ÎÄ¼ş!
-::Please use GB 2312 encoding to view and edit this file!
-::ÈôÇĞ»»µ½"UTF-8"±àÂë
-::If switching to UTF-8 encoding
-::ÇëÒÆ³ıÏÂ·½"@REM",ÒÔÈ·±£Õı³£ÏÔÊ¾
-::Please remove '@ REM' below to ensure proper display
-@REM chcp 65001
+@REM è‹¥æœåŠ¡å™¨ä¸­æœ‰æ–‡å­—æ˜¾ç¤ºå¼‚å¸¸ï¼Œè¯·åœ¨ä¸‹æ–¹chcpå‰æ·»åŠ  "@REM "ï¼Œå¹¶ä½¿ç”¨ GB 2312 ç¼–ç ä¿å­˜è¯¥æ–‡ä»¶
+chcp 65001
 title Loading-XE-SakuraMaple_MCSL-vX-Preview
 cls
-::ÉèÖÃÑÕÉ«±äÁ¿ĞÅÏ¢
+@REM è®¾ç½®é¢œè‰²å˜é‡ä¿¡æ¯
 set "colorError=06"
 set "colorRunning=02"
 set "colorWarning=03"
 set "colorChoose=09"
-::ÅäÖÃUp One LevelÎª"null"
+@REM é…ç½®Up One Levelä¸º"null"
 set "uol=null"
 color %colorWarning%
-::»ù±¾ĞÅÏ¢
-::ÏµÍ³Ê±¼ä
-echo µ±Ç°ÏµÍ³Ê±¼ä: && time /t
-::ÏµÍ³ÈÕÆÚ
-echo µ±Ç°ÏµÍ³ÈÕÆÚ: && date /t
-::ÏµÍ³°æ±¾
-echo ÕıÔÚÔËĞĞµÄÏµÍ³°æ±¾: && ver
-::µ±Ç°ÓÃ»§
-echo Æô¶¯Åú´¦ÀíµÄÓÃ»§: && whoami
-::Ö÷»úÃû³Æ
-echo Ö÷»úÃû³Æ: && hostname
-::IPÅäÖÃĞÅÏ¢
-echo IPµØÖ·ÅäÖÃĞÅÏ¢: && ipconfig
-::¿ÕĞĞ
+@REM åŸºæœ¬ä¿¡æ¯
+@REM ç³»ç»Ÿæ—¶é—´
+echo å½“å‰ç³»ç»Ÿæ—¶é—´: && time /t
+@REM ç³»ç»Ÿæ—¥æœŸ
+echo å½“å‰ç³»ç»Ÿæ—¥æœŸ: && date /t
+@REM ç³»ç»Ÿç‰ˆæœ¬
+echo æ­£åœ¨è¿è¡Œçš„ç³»ç»Ÿç‰ˆæœ¬: && ver
+@REM å½“å‰ç”¨æˆ·
+echo å¯åŠ¨æ‰¹å¤„ç†çš„ç”¨æˆ·: && whoami
+@REM ä¸»æœºåç§°
+echo ä¸»æœºåç§°: && hostname
+@REM IPé…ç½®ä¿¡æ¯
+echo IPåœ°å€é…ç½®ä¿¡æ¯: && ipconfig
+@REM ç©ºè¡Œ
 echo.
-::ÉèÖÃJVM(JavaÂ·¾¶)(Ö§³Ö»·¾³±äÁ¿)
-::Â·¾¶Ò»Ö±Ğ´µ½./bin/java.exe
+@REM è®¾ç½®JVM(Javaè·¯å¾„)(æ”¯æŒç¯å¢ƒå˜é‡)
+@REM è·¯å¾„ä¸€ç›´å†™åˆ°./bin/java.exe
 set "JVM=java"
-::ÉèÖÃ·şÎñÆ÷ºËĞÄÎÄ¼şÃû³Æ,ÔÚ±äÁ¿µÈºÅºó¼üÈë(Ò»Ö±½ÓĞ´µ½.jar)
-::ÈôºËĞÄÃ»ÓĞÊµÌåµÄjarÎÄ¼ş(Èç²¿·ÖForge¡¢NeoForgeºËĞÄ,¼°ÆäËüºËĞÄ²ÉÓÃÍ¬Ñù²ßÂÔµÄºËĞÄ)Çë½«¸Ã±äÁ¿**Áô¿Õ**,°´ÕÕÏÂ·½ËµÃ÷ÌîĞ´ ServerTXT ±äÁ¿!
+@REM è®¾ç½®æœåŠ¡å™¨æ ¸å¿ƒæ–‡ä»¶åç§°,åœ¨å˜é‡ç­‰å·åé”®å…¥(ä¸€ç›´æ¥å†™åˆ°.jar)
+@REM è‹¥æ ¸å¿ƒæ²¡æœ‰å®ä½“çš„jaræ–‡ä»¶(å¦‚éƒ¨åˆ†Forgeã€NeoForgeæ ¸å¿ƒ,åŠå…¶å®ƒæ ¸å¿ƒé‡‡ç”¨åŒæ ·ç­–ç•¥çš„æ ¸å¿ƒ)è¯·å°†è¯¥å˜é‡**ç•™ç©º**,æŒ‰ç…§ä¸‹æ–¹è¯´æ˜å¡«å†™ ServerTXT å˜é‡!
 set "ServerJar=paper-1.8.8-445.jar"
-::ÌØÊâºËĞÄÂ·¾¶±äÁ¿
-::ÈôÊ¹ÓÃµÄÊÇ²¿·ÖForge¡¢NeoForgeµÈºËĞÄ,ÇëÔÚÄ¿Â¼ÖĞÕÒµ½Forge¡¢NeoForge·şÎñÆ÷°²×°Æ÷Éú³ÉµÄ"run.bat"ÎÄ¼ş
-::ÓÒ¼ü->±à¼­
-::ÕÒµ½µ±ÖĞµÄ"java @user_jvm_args.txt @libraries/net/xxxforge/xxxforge/x.x.x-xx.xx.xx/win_args.txt %*"Óï¾ä
-::¸´ÖÆµ±ÖĞµÄ"@libraries/net/xxxforge/xxxforge/x.x.x-xx.xx.xx/win_args.txt"×Ö¶Î
-::Õ³Ìùµ½ÏÂ·½ServerTXT±äÁ¿µÄµÈºÅºóÃæ
-::×¢:ÇëÎñ±Ø¿´ÇåÎÄ¼şÀ©Õ¹(ºó×º)Ãû!µ±ÖĞµÄrun.shÎÄ¼şÊÊÓÃÓÚLinuxÆ½Ì¨,ÇëÎğ¸´ÖÆ¸ÃÎÄ¼şµÄ×Ö¶Î!
-::¿ªÆôÎÄ¼şÀ©Õ¹ÃûÏÔÊ¾:ÎÄ¼ş¼ĞÑ¡Ïî->²é¿´,ÔÚÏÂ·½µÄÑ¡Ïî¿òÖĞÕÒµ½"Òş²ØÒÑÖªÎÄ¼şÀàĞÍµÄÀ©Õ¹Ãû"È¡Ïû¹´Ñ¡,Ó¦ÓÃ²¢È·¶¨
-::×¢:µ± ServerJar ±äÁ¿ÓĞÄÚÈİÊ±, ServerTXT±äÁ¿ **²»ÉúĞ§**
+@REM ç‰¹æ®Šæ ¸å¿ƒè·¯å¾„å˜é‡
+@REM è‹¥ä½¿ç”¨çš„æ˜¯éƒ¨åˆ†Forgeã€NeoForgeç­‰æ ¸å¿ƒ,è¯·åœ¨ç›®å½•ä¸­æ‰¾åˆ°Forgeã€NeoForgeæœåŠ¡å™¨å®‰è£…å™¨ç”Ÿæˆçš„"run.bat"æ–‡ä»¶
+@REM å³é”®-->ç¼–è¾‘
+@REM æ‰¾åˆ°å½“ä¸­çš„"java @user_jvm_args.txt @libraries/net/xxxforge/xxxforge/x.x.x-xx.xx.xx/win_args.txt %*"è¯­å¥
+@REM å¤åˆ¶å½“ä¸­çš„"@libraries/net/xxxforge/xxxforge/x.x.x-xx.xx.xx/win_args.txt"å­—æ®µ
+@REM ç²˜è´´åˆ°ä¸‹æ–¹ServerTXTå˜é‡çš„ç­‰å·åé¢
+@REM æ³¨:è¯·åŠ¡å¿…çœ‹æ¸…æ–‡ä»¶æ‰©å±•(åç¼€)å!å½“ä¸­çš„run.shæ–‡ä»¶é€‚ç”¨äºLinuxå¹³å°,è¯·å‹¿å¤åˆ¶è¯¥æ–‡ä»¶çš„å­—æ®µ!
+@REM å¼€å¯æ–‡ä»¶æ‰©å±•åæ˜¾ç¤º:æ–‡ä»¶å¤¹é€‰é¡¹-->æŸ¥çœ‹,åœ¨ä¸‹æ–¹çš„é€‰é¡¹æ¡†ä¸­æ‰¾åˆ°"éšè—å·²çŸ¥æ–‡ä»¶ç±»å‹çš„æ‰©å±•å"å–æ¶ˆå‹¾é€‰,åº”ç”¨å¹¶ç¡®å®š
+@REM æ³¨:å½“ ServerJar å˜é‡æœ‰å†…å®¹æ—¶, ServerTXTå˜é‡ **ä¸ç”Ÿæ•ˆ**
 set "ServerTXT=@libraries/net/minecraftforge/forge/1.20.1-47.2.20/win_args.txt"
-::ºËĞÄ·½°¸(ÈôÃ»ÓĞÁô¿ÕServerJar±äÁ¿ÔòÓÅÏÈ²ÉÓÃServerJar±äÁ¿ÖĞµÄÄÚÈİÆô¶¯)
+@REM æ ¸å¿ƒæ–¹æ¡ˆ(è‹¥æ²¡æœ‰ç•™ç©ºServerJarå˜é‡åˆ™ä¼˜å…ˆé‡‡ç”¨ServerJarå˜é‡ä¸­çš„å†…å®¹å¯åŠ¨)
 if "%ServerJar%" neq "" (
     set "ServerFile=-jar "%ServerJar%""
 ) else (
     set "ServerFile="%ServerTXT%""
 )
-::ÉèÖÃ·şÎñÆ÷ÄÚ´æ,×î´óÓë×îĞ¡
-::»ù±¾
-::×î´ó¿ÉÓÃÄÚ´æ(ÔÚ±äÁ¿µÈºÅºó¼üÈëÊı×Ö,µ¥Î»MB)
+@REM è®¾ç½®æœåŠ¡å™¨å†…å­˜,æœ€å¤§ä¸æœ€å°
+@REM åŸºæœ¬
+@REM æœ€å¤§å¯ç”¨å†…å­˜(åœ¨å˜é‡ç­‰å·åé”®å…¥æ•°å­—,å•ä½MB)
 set "XmxSize=8192"
-::×îĞ¡ÄÚ´æÓÃÁ¿(ÔÚ±äÁ¿µÈºÅºó¼üÈëÊı×Ö,µ¥Î»MB)
+@REM æœ€å°å†…å­˜ç”¨é‡(åœ¨å˜é‡ç­‰å·åé”®å…¥æ•°å­—,å•ä½MB)
 set "XmsSize=4096"
-::¸ß¼¶
-::Xmn/XssÆôÓÃ/½ûÓÃ(ÉèÖÃÎª1Ê±ÆôÓÃ)
+@REM é«˜çº§
+@REM Xmn/Xsså¯ç”¨/ç¦ç”¨(è®¾ç½®ä¸º1æ—¶å¯ç”¨)
 set "XmnTrue=0"
 set "XssTrue=0"
-::XmnÅäÖÃ
-::ÉèÖÃÄêÇá´ú´óĞ¡(ÔÚ±äÁ¿µÈºÅºó¼üÈëÊı×Ö,µ¥Î»MB)
-::Õû¸ö¶Ñ´óĞ¡=ÄêÇá´ú´óĞ¡ + ÄêÀÏ´ú´óĞ¡ + ³Ö¾Ã´ú´óĞ¡
-::³Ö¾Ã´úÒ»°ã¹Ì¶¨´óĞ¡Îª64m,ËùÒÔÔö´óÄêÇá´úºó,½«»á¼õĞ¡ÄêÀÏ´ú´óĞ¡
-::´ËÖµ¶ÔÏµÍ³ĞÔÄÜÓ°Ïì½Ï´ó
-::Sun¹Ù·½ÍÆ¼öÅäÖÃÎªÕû¸ö¶ÑµÄ3/8.
+@REM Xmné…ç½®
+@REM è®¾ç½®å¹´è½»ä»£å¤§å°(åœ¨å˜é‡ç­‰å·åé”®å…¥æ•°å­—,å•ä½MB)
+@REM æ•´ä¸ªå †å¤§å°=å¹´è½»ä»£å¤§å° + å¹´è€ä»£å¤§å° + æŒä¹…ä»£å¤§å°
+@REM æŒä¹…ä»£ä¸€èˆ¬å›ºå®šå¤§å°ä¸º64m,æ‰€ä»¥å¢å¤§å¹´è½»ä»£å,å°†ä¼šå‡å°å¹´è€ä»£å¤§å°
+@REM æ­¤å€¼å¯¹ç³»ç»Ÿæ€§èƒ½å½±å“è¾ƒå¤§
+@REM Sunå®˜æ–¹æ¨èé…ç½®ä¸ºæ•´ä¸ªå †çš„3/8.
 set "XmnSize=3072"
-::XssÅäÖÃ
-::ÉèÖÃÃ¿¸öÏß³ÌµÄ¶ÑÕ»´óĞ¡(ÔÚ±äÁ¿µÈºÅºó¼üÈëÊı×Ö,µ¥Î»MB)
+@REM Xssé…ç½®
+@REM è®¾ç½®æ¯ä¸ªçº¿ç¨‹çš„å †æ ˆå¤§å°(åœ¨å˜é‡ç­‰å·åé”®å…¥æ•°å­—,å•ä½MB)
 set "XssSize=512"
-::Ê¶±ğÄ£¿é
+@REM è¯†åˆ«æ¨¡å—
 if "%XmnTrue%" == "1" set "XmnStatus=-Xmn%XmnSize%m"
 if "%XssTrue%" == "1" set "XssStatus=-Xss%XssSize%m"
-::¸ü¶àÅäÖÃ
-::ÉèÖÃ·şÎñÆ÷GUI×´Ì¬(Áô¿ÕÎªÏÔÊ¾GUI,"nogui"Îª²»ÏÔÊ¾GUI)
+@REM æ›´å¤šé…ç½®
+@REM è®¾ç½®æœåŠ¡å™¨GUIçŠ¶æ€(ç•™ç©ºä¸ºæ˜¾ç¤ºGUI,"nogui"ä¸ºä¸æ˜¾ç¤ºGUI)
 set "gui="
-::ÅäÖÃ×Ô¶¨ÒåµÄµÇÂ¼ÈÏÖ¤·şÎñÆ÷(·Ç±ØÒª,ÇëÁô¿Õ!)
-::×¢:ÒÑÔ¤ÖÃLittleSkinºÍMUA
-::Èç¹ûÊ¹ÓÃÆäËüµÄÈÏÖ¤·şÎñÆ÷ÔòĞ´ÔÚÏÂ·½±äÁ¿µÄµÈºÅºó
+@REM é…ç½®è‡ªå®šä¹‰çš„ç™»å½•è®¤è¯æœåŠ¡å™¨(éå¿…è¦,è¯·ç•™ç©º!)
+@REM æ³¨:å·²é¢„ç½®LittleSkinå’ŒMUA
+@REM å¦‚æœä½¿ç”¨å…¶å®ƒçš„è®¤è¯æœåŠ¡å™¨åˆ™å†™åœ¨ä¸‹æ–¹å˜é‡çš„ç­‰å·å
 set "CustomAuthURL="
-::Ê×´ÎÆô¶¯Åú´¦Àí×Ô¶¯ÅäÖÃÊ×Ñ¡ÏîµÈ´ıÊ±¼äÓë×´Ì¬
+@REM é¦–æ¬¡å¯åŠ¨æ‰¹å¤„ç†è‡ªåŠ¨é…ç½®é¦–é€‰é¡¹ç­‰å¾…æ—¶é—´ä¸çŠ¶æ€
 set "waitTime=/T 22"
 set "DefaultChoice=/D y"
-::Ê×´ÎÆô¶¯Åú´¦Àí×Ô¶¯ÅäÖÃÈÏÖ¤·şÎñÆ÷µÈ´ıÊ±¼äÓë×´Ì¬
+@REM é¦–æ¬¡å¯åŠ¨æ‰¹å¤„ç†è‡ªåŠ¨é…ç½®è®¤è¯æœåŠ¡å™¨ç­‰å¾…æ—¶é—´ä¸çŠ¶æ€
 set "AuthWaitTime=/T 8"
 set "DefaultAuthURLChoice=/D l"
 
 :bc
 title Jump-XE-SakuraMaple_MCSL-vX-Preview
-::Ìø×ª¹ÜÀíÆ÷-¸³Öµ
+@REM è·³è½¬ç®¡ç†å™¨-èµ‹å€¼
 if "%uol%" == "null" set "BackCode=" && goto br
 if "%uol%" == "AuthConfig" set "BackCode=l" && goto br
 if "%uol%" == "AutoConfig" set "BackCode=a" && goto br
@@ -103,15 +96,15 @@ if "%uol%" == "MainConfig" set "BackCode=e" && goto br
 if "%uol%" == "FastConfig" set "BackCode=f" && goto br
 if "%uol%" == "EulaConfig" set "BackCode=t" && goto br
 if "%uol%" == "running" set "BackCode=rsr" && goto br
-::Ã»ÓĞÆ¥Åä,ÒÆ²½±¨´í
+@REM æ²¡æœ‰åŒ¹é…,ç§»æ­¥æŠ¥é”™
 set "ErrorCode=TeaPot" && goto br
 
 :br
 title Jump-XE-SakuraMaple_MCSL-vX-Preview
-::Ìø×ª¹ÜÀíÆ÷-Ö´ĞĞ
+@REM è·³è½¬ç®¡ç†å™¨-æ‰§è¡Œ
 if "%BackCode%" neq "" goto %BackCode%
-::Òì³£±äÁ¿Ìø×ª
-if "%ErrorCode%" == "TeaPot" echo "Ìø×ª¹ÜÀíÆ÷Óöµ½ÑÏÖØ´íÎó,ÕıÔÚ×ªµ½Åú´¦ÀíÖ÷²Ëµ¥¡­" && timeout /t 3 && goto e
+@REM å¼‚å¸¸å˜é‡è·³è½¬
+if "%ErrorCode%" == "TeaPot" echo "è·³è½¬ç®¡ç†å™¨é‡åˆ°ä¸¥é‡é”™è¯¯,æ­£åœ¨è½¬åˆ°æ‰¹å¤„ç†ä¸»èœå•â€¦" && timeout /t 3 && goto e
 
 :CheckServerCoreConfig
 
@@ -124,7 +117,7 @@ if "%ServerJar%" neq "" (
 :CheckServerCoreConfigJarFile
 
 if "%ServerJar%" neq "" (
-    echo ¼ì²âµ½ÒÑÅäÖÃºËĞÄJarÎÄ¼ş
+    echo æ£€æµ‹åˆ°å·²é…ç½®æ ¸å¿ƒJaræ–‡ä»¶
     goto CheckServerCoreStatus
 ) else (
     goto ErrorServerCore
@@ -133,7 +126,7 @@ if "%ServerJar%" neq "" (
 :CheckServerCoreConfigTXTFile
 
 if "%ServerFile%" neq "" (
-    echo ¼ì²âµ½ÒÑÅäÖÃtxtÆô¶¯ÎÄ¼ş
+    echo æ£€æµ‹åˆ°å·²é…ç½®txtå¯åŠ¨æ–‡ä»¶
     goto FirstLaunch
 ) else (
     goto ErrorServerCore
@@ -142,46 +135,46 @@ if "%ServerFile%" neq "" (
 :CheckServerCoreStatus
 
 if exist .\%ServerJar% (
-    echo ¼ì²âµ½ÅäÖÃµÄ·şÎñÆ÷ºËĞÄ
+    echo æ£€æµ‹åˆ°é…ç½®çš„æœåŠ¡å™¨æ ¸å¿ƒ
     goto FirstLaunch
 ) else (
-    echo Î´·¢ÏÖÅäÖÃµÄ·şÎñÆ÷ºËĞÄ
+    echo æœªå‘ç°é…ç½®çš„æœåŠ¡å™¨æ ¸å¿ƒ
     goto ErrorServerCore
 )
 
 :ErrorServerCore
 set "colorError=04"
 color %colorError%
-echo ÅäÖÃµÄ·şÎñÆ÷ºËĞÄÎÄ¼şÂ·¾¶´íÎó»ò²»´æÔÚ,Çë¼ì²éServerJar»òServerTXT±äÁ¿ÊÇ·ñÅäÖÃÕıÈ·!
+echo é…ç½®çš„æœåŠ¡å™¨æ ¸å¿ƒæ–‡ä»¶è·¯å¾„é”™è¯¯æˆ–ä¸å­˜åœ¨,è¯·æ£€æŸ¥ServerJaræˆ–ServerTXTå˜é‡æ˜¯å¦é…ç½®æ­£ç¡®!
 timeout /t 6
 goto x
 
 :FirstLaunch
 
-echo ************************ÕıÔÚ×Ô¼ì,ÈçĞèÍ£Ö¹,Çë°´Ctrl+CÍ£Ö¹Æô¶¯,°´ÈÎÒâ¼üÌø¹ıÖ±½ÓÆô¶¯************************
+echo ************************æ­£åœ¨è‡ªæ£€,å¦‚éœ€åœæ­¢,è¯·æŒ‰Ctrl+Cåœæ­¢å¯åŠ¨,æŒ‰ä»»æ„é”®è·³è¿‡ç›´æ¥å¯åŠ¨************************
 timeout /t 8
 
 
 
 :CheckEula
-echo ÕıÔÚ¼ì²éĞí¿ÉĞ­Òé×´Ì¬¡­
-::EulaĞ­ÒéÎÄ¼ş¼ì²é
+echo æ­£åœ¨æ£€æŸ¥è®¸å¯åè®®çŠ¶æ€â€¦
+@REM Eulaåè®®æ–‡ä»¶æ£€æŸ¥
 title Eula-XE-SakuraMaple_MCSL-vX-Preview
 if exist .\eula.txt (
-    echo ¼ì²âµ½Ğí¿ÉĞ­ÒéÎÄ¼ş!
+    echo æ£€æµ‹åˆ°è®¸å¯åè®®æ–‡ä»¶!
     set "EulaFile=1"
     goto ReadEula
 ) else (
-    echo ¼ì²â²»µ½Ğí¿ÉĞ­ÒéÎÄ¼ş!
+    echo æ£€æµ‹ä¸åˆ°è®¸å¯åè®®æ–‡ä»¶!
     set "EulaFile=0"
     echo.
-    echo ÊÇ·ñ´´½¨²¢Ğ´ÈëÄÚÈİ?
+    echo æ˜¯å¦åˆ›å»ºå¹¶å†™å…¥å†…å®¹?
     goto CheckEulaChoice
 )
 
 :CheckEulaChoice
-::Ğ­Òé¼ì²éÑ¡Ïî
-echo ¼üÈë"y"È·ÈÏ,¼üÈë"n"È¡Ïû,¼üÈë"x"¹Ø±ÕÅú´¦Àí
+@REM åè®®æ£€æŸ¥é€‰é¡¹
+echo é”®å…¥"y"ç¡®è®¤,é”®å…¥"n"å–æ¶ˆ,é”®å…¥"x"å…³é—­æ‰¹å¤„ç†
 choice /C ynx /CS
 if %errorlevel% == 1 goto CreateEula
 if %errorlevel% == 2 goto t
@@ -191,37 +184,37 @@ color %colorError%
 
 title Error-XE-SakuraMaple_MCSL-vX-Preview
 
-echo ************************·¢ÉúÒì³£************************
+echo ************************å‘ç”Ÿå¼‚å¸¸************************
 
 pause
 
 goto CheckEulaChoice
 
 :ReadEula
-::EulaĞ­ÒéÎÄ¼ş¶ÁÈ¡
+@REM Eulaåè®®æ–‡ä»¶è¯»å–
 title Eula-XE-SakuraMaple_MCSL-vX-Preview
-::×Ö·û¼ì²é
-echo ÕıÔÚ¼ì²éÎÄ¼şÍêÕûĞÔ¡­
-::´Ë´¦"eula"×Ö·û´óĞ¡Ğ´Ãô¸Ğ
-::ÖØ¶¨Ïòµ½"nul"±ÜÃâÆÁÏÔ
-echo ×¢:¼ì²â½öÄÜ¼ì²âĞ¡Ğ´×Ö·û,Èô"true"Îª´óĞ´»òÕß´óĞ¡Ğ´»ìÓÃÈÔ»áÊ¶±ğÎª²»ÍêÕû
+@REM å­—ç¬¦æ£€æŸ¥
+echo æ­£åœ¨æ£€æŸ¥æ–‡ä»¶å®Œæ•´æ€§â€¦
+@REM æ­¤å¤„"eula"å­—ç¬¦å¤§å°å†™æ•æ„Ÿ
+@REM é‡å®šå‘åˆ°"nul"é¿å…å±æ˜¾
+echo æ³¨:æ£€æµ‹ä»…èƒ½æ£€æµ‹å°å†™å­—ç¬¦,è‹¥"true"ä¸ºå¤§å†™æˆ–è€…å¤§å°å†™æ··ç”¨ä»ä¼šè¯†åˆ«ä¸ºä¸å®Œæ•´
 findstr "eula=true" .\eula.txt >nul
 if %errorlevel% == 0 (
-    echo Ğ­ÒéÍ¬ÒâĞÅÏ¢ÍêÕû!
-    ::ÉèÖÃÒ»¸öÉùÃ÷EulaĞ­ÒéÍêÕûµÄ±äÁ¿,ÕâÀï²»ÊÇeula.txtÖĞÌîĞ´µÄĞÅÏ¢,½öÓÃÓÚºóĞøµ÷ÓÃÊ¶±ğÓë¼ì²â
+    echo åè®®åŒæ„ä¿¡æ¯å®Œæ•´!
+    @REM è®¾ç½®ä¸€ä¸ªå£°æ˜Eulaåè®®å®Œæ•´çš„å˜é‡,è¿™é‡Œä¸æ˜¯eula.txtä¸­å¡«å†™çš„ä¿¡æ¯,ä»…ç”¨äºåç»­è°ƒç”¨è¯†åˆ«ä¸æ£€æµ‹
     set "EulaContent=1"
     timeout /t 3
     goto ReadEulaJump
 ) else (
-    echo Ğ­ÒéÍ¬ÒâĞÅÏ¢²»ÍêÕû
+    echo åè®®åŒæ„ä¿¡æ¯ä¸å®Œæ•´
     set "EulaContent=0"
     echo.
-    echo ÊÇ·ñ¸²Ğ´^(Í¬ÒâĞ­Òé^)^?
+    echo æ˜¯å¦è¦†å†™^(åŒæ„åè®®^)^?
     goto ReadEulaChoice
 )
 
 :ReadEulaJump
-::Ìø×ªÎ»ÖÃÅĞ¶Ï
+@REM è·³è½¬ä½ç½®åˆ¤æ–­
 if "%uol%" == "null" (
     goto f
 ) else (
@@ -229,8 +222,8 @@ if "%uol%" == "null" (
 )
 
 :ReadEulaChoice
-::Ğ­Òé¶ÁÈ¡Ñ¡Ïî
-echo ¼üÈë"y"È·ÈÏ,¼üÈë"n"È¡Ïû,¼üÈë"x"¹Ø±ÕÅú´¦Àí
+@REM åè®®è¯»å–é€‰é¡¹
+echo é”®å…¥"y"ç¡®è®¤,é”®å…¥"n"å–æ¶ˆ,é”®å…¥"x"å…³é—­æ‰¹å¤„ç†
 choice /C ynx /CS
 if %errorlevel% == 1 goto WriteEula
 if %errorlevel% == 2 goto t
@@ -240,7 +233,7 @@ color %colorError%
 
 title Error-XE-SakuraMaple_MCSL-vX-Preview
 
-echo ************************·¢ÉúÒì³£************************
+echo ************************å‘ç”Ÿå¼‚å¸¸************************
 
 pause
 
@@ -249,21 +242,21 @@ goto ReadEulaChoice
 :f
 color %colorChoose%
 title Fest Boot-SakuraMaple_MCSL-vX-Preview
-::FastConfig¿ìËÙÅäÖÃ²Ëµ¥
-::ÅäÖÃUp One LevelÎª"FastConfig"
+@REM FastConfigå¿«é€Ÿé…ç½®èœå•
+@REM é…ç½®Up One Levelä¸º"FastConfig"
 set "uol=FastConfig"
 if "%DefaultChoice%" == "/D y" (
-    set "echoDefault=(Ä¬ÈÏ)"
+    set "echoDefault=(é»˜è®¤)"
 ) else (
     set "echoDefault="
 )
-echo ******¿ìËÙÆô¶¯******
-echo ¼üÈë"y"Ôò¿ªÆô·şÎñÆ÷µÚÈı·½ÈÏÖ¤%echoDefault%
-echo ¼üÈë"n"Ôò¹Ø±Õ·şÎñÆ÷µÚÈı·½ÈÏÖ¤
-echo ¼üÈë"x"½áÊøÅú´¦ÀíÔËĞĞ
-echo ¼üÈë"m"ÅäÖÃ¸ü¶àÑ¡Ïî
-echo ¼üÈë"s"ÇĞ»»·şÎñÆ÷GUIÏÔÊ¾×´Ì¬(½öÖ§³Ö²¿·Ö·şÎñÆ÷ºËĞÄ)
-echo ¼üÈë"4"ÇĞ»»·şÎñÆ÷ÖÕÖ¹ÑÕÉ«(ºì/»Æ[Ä¬ÈÏ])
+echo ******å¿«é€Ÿå¯åŠ¨******
+echo é”®å…¥"y"åˆ™å¼€å¯æœåŠ¡å™¨ç¬¬ä¸‰æ–¹è®¤è¯%echoDefault%
+echo é”®å…¥"n"åˆ™å…³é—­æœåŠ¡å™¨ç¬¬ä¸‰æ–¹è®¤è¯
+echo é”®å…¥"x"ç»“æŸæ‰¹å¤„ç†è¿è¡Œ
+echo é”®å…¥"m"é…ç½®æ›´å¤šé€‰é¡¹
+echo é”®å…¥"s"åˆ‡æ¢æœåŠ¡å™¨GUIæ˜¾ç¤ºçŠ¶æ€(ä»…æ”¯æŒéƒ¨åˆ†æœåŠ¡å™¨æ ¸å¿ƒ)
+echo é”®å…¥"4"åˆ‡æ¢æœåŠ¡å™¨ç»ˆæ­¢é¢œè‰²(çº¢/é»„[é»˜è®¤])
 choice %waitTime% /C ynx4ms /CS %DefaultChoice%
 if %errorlevel% == 1 set "FirstStart=goto r" && goto AuthLibCheck
 if %errorlevel% == 2 set "FirstStart=goto r" && goto ClearAuth
@@ -276,33 +269,33 @@ color %colorError%
 
 title Error-XE-SakuraMaple_MCSL-vX-Preview
 
-echo ************************·¢ÉúÒì³£************************
+echo ************************å‘ç”Ÿå¼‚å¸¸************************
 
 pause
 
 goto f
 
 :l
-::µÚÈı·½ÈÏÖ¤¹¦ÄÜÅäÖÃ²Ëµ¥
+@REM ç¬¬ä¸‰æ–¹è®¤è¯åŠŸèƒ½é…ç½®èœå•
 color %colorChoose%
 title Authentication Server-SakuraMaple_MCSL-vX-Preview
-::Çå³ıÄ¬ÈÏÑ¡ÏîÓëµÈ´ıÊ±¼ä
+@REM æ¸…é™¤é»˜è®¤é€‰é¡¹ä¸ç­‰å¾…æ—¶é—´
 if "%waitTime%" neq "" set "waitTime="
 if "%DefaultChoice%" neq "" set "DefaultChoice="
 if "%DefaultAuthURLChoice%" neq "" set "DefaultAuthURLChoice="
 if "%AuthWaitTime%" neq "" set "AuthWaitTime="
-::µÚÈı·½ÈÏÖ¤¹¦ÄÜÑ¡Ïî
-echo ÇëÑ¡ÔñÊÇ·ñÆôÓÃµÚÈı·½ÈÏÖ¤(LittleSkin/MUA):
+@REM ç¬¬ä¸‰æ–¹è®¤è¯åŠŸèƒ½é€‰é¡¹
+echo è¯·é€‰æ‹©æ˜¯å¦å¯ç”¨ç¬¬ä¸‰æ–¹è®¤è¯(LittleSkin/MUA):
 echo.
-echo ¼üÈë"y"Ôò¿ªÆô·şÎñÆ÷µÚÈı·½ÈÏÖ¤
-echo ¼üÈë"n"Ôò¹Ø±Õ·şÎñÆ÷µÚÈı·½ÈÏÖ¤
-echo ¼üÈë"x"½áÊøÅú´¦ÀíÔËĞĞ
-echo ¼üÈë"c"½øÈëÅú´¦ÀíÅäÖÃ
-echo ¼üÈë"i"²éÑ¯µ±Ç°ÈÏÖ¤×´Ì¬
-echo ¼üÈë"s"ÇĞ»»·şÎñÆ÷GUIÏÔÊ¾×´Ì¬(½öÖ§³Ö²¿·Ö·şÎñÆ÷ºËĞÄ)
-echo ¼üÈë"4"ÇĞ»»·şÎñÆ÷ÖÕÖ¹ÑÕÉ«(ºì/»Æ[Ä¬ÈÏ])
-echo ¼üÈë"0"ÏÂÔØauthlib-injector(ÊµÑéĞÔ:¿ÉÄÜÎŞ·¨Õı³£¹¤×÷)
-::ÅäÖÃUp One LevelÎª"AuthConfig"
+echo é”®å…¥"y"åˆ™å¼€å¯æœåŠ¡å™¨ç¬¬ä¸‰æ–¹è®¤è¯
+echo é”®å…¥"n"åˆ™å…³é—­æœåŠ¡å™¨ç¬¬ä¸‰æ–¹è®¤è¯
+echo é”®å…¥"x"ç»“æŸæ‰¹å¤„ç†è¿è¡Œ
+echo é”®å…¥"c"è¿›å…¥æ‰¹å¤„ç†é…ç½®
+echo é”®å…¥"i"æŸ¥è¯¢å½“å‰è®¤è¯çŠ¶æ€
+echo é”®å…¥"s"åˆ‡æ¢æœåŠ¡å™¨GUIæ˜¾ç¤ºçŠ¶æ€(ä»…æ”¯æŒéƒ¨åˆ†æœåŠ¡å™¨æ ¸å¿ƒ)
+echo é”®å…¥"4"åˆ‡æ¢æœåŠ¡å™¨ç»ˆæ­¢é¢œè‰²(çº¢/é»„[é»˜è®¤])
+echo é”®å…¥"0"ä¸‹è½½authlib-injector(å®éªŒæ€§:å¯èƒ½æ— æ³•æ­£å¸¸å·¥ä½œ)
+@REM é…ç½®Up One Levelä¸º"AuthConfig"
 set "uol=AuthConfig"
 
 choice /C ync4xis0 /CS
@@ -319,24 +312,24 @@ color %colorError%
 
 title Error-XE-SakuraMaple_MCSL-vX-Preview
 
-echo ************************·¢ÉúÒì³£************************
+echo ************************å‘ç”Ÿå¼‚å¸¸************************
 
 pause
 
 goto l
 
 :Colorful
-::ÖÕÖ¹ÑÕÉ«ÅĞ¶ÏÓëÇĞ»»
+@REM ç»ˆæ­¢é¢œè‰²åˆ¤æ–­ä¸åˆ‡æ¢
 if "%colorError%" == "06" (
     echo.
     set "colorError=04"
-    echo ÒÑ½«ÖÕÖ¹ÑÕÉ«ÇĞ»»ÎªºìÉ«
+    echo å·²å°†ç»ˆæ­¢é¢œè‰²åˆ‡æ¢ä¸ºçº¢è‰²
     echo.
     goto Preview
 ) else (
     echo.
     set "colorError=06"
-    echo ÒÑ½«ÖÕÖ¹ÑÕÉ«ÇĞ»»Îª»ÆÉ«
+    echo å·²å°†ç»ˆæ­¢é¢œè‰²åˆ‡æ¢ä¸ºé»„è‰²
     echo.
     goto Preview
 )
@@ -348,19 +341,19 @@ pause
 goto bc
 
 :AuthLibCheck
-echo ÕıÔÚ¼ì²âauthlib-injector-1.2.5.jarÊÇ·ñ´æÔÚ¡­
+echo æ­£åœ¨æ£€æµ‹authlib-injector-1.2.5.jaræ˜¯å¦å­˜åœ¨â€¦
 if exist .\authlib-injector-1.2.5.jar (
-    echo ³É¹¦¼ì²âµ½"authlib-injector-1.2.5.jar"!
+    echo æˆåŠŸæ£€æµ‹åˆ°"authlib-injector-1.2.5.jar"!
     timeout /t 3
     goto ChoiceAuth
 ) else (
-    echo Ã»ÓĞÕÒµ½"authlib-injector-1.2.5.jar"!
-    echo ÊÇ·ñÇ°ÍùÏÂÔØ?
+    echo æ²¡æœ‰æ‰¾åˆ°"authlib-injector-1.2.5.jar"!
+    echo æ˜¯å¦å‰å¾€ä¸‹è½½?
     goto AuthLibCheckChoice
 )
 
 :AuthLibCheckChoice
-echo ¼üÈë"y"Ç°ÍùÏÂÔØ,¼üÈë"n"È¡ÏûÏÂÔØ²¢·µ»ØÈÏÖ¤·şÎñÆ÷ÅäÖÃ,¼üÈë"x"¹Ø±ÕÅú´¦Àí
+echo é”®å…¥"y"å‰å¾€ä¸‹è½½,é”®å…¥"n"å–æ¶ˆä¸‹è½½å¹¶è¿”å›è®¤è¯æœåŠ¡å™¨é…ç½®,é”®å…¥"x"å…³é—­æ‰¹å¤„ç†
 choice /C ynx /CS
 if %errorlevel% == 1 goto DownloadAuth
 if %errorlevel% == 2 goto l
@@ -370,14 +363,14 @@ color %colorError%
 
 title Error-XE-SakuraMaple_MCSL-vX-Preview
 
-echo ************************·¢ÉúÒì³£************************
+echo ************************å‘ç”Ÿå¼‚å¸¸************************
 
 pause
 
 goto AuthLibCheckChoice
 
 :AuthInfo
-::µÚÈı·½ÈÏÖ¤×´Ì¬ĞÅÏ¢
+@REM ç¬¬ä¸‰æ–¹è®¤è¯çŠ¶æ€ä¿¡æ¯
 color %colorChoose%
 
 title Authentication Information-SakuraMaple_MCSL-vX-Preview
@@ -385,19 +378,19 @@ title Authentication Information-SakuraMaple_MCSL-vX-Preview
 echo.
 
 if "%Auth%" == "" (
-    echo µ±Ç°µÚÈı·½ÈÏÖ¤·şÎñ´¦ÓÚ¹Ø±Õ×´Ì¬!
+    echo å½“å‰ç¬¬ä¸‰æ–¹è®¤è¯æœåŠ¡å¤„äºå…³é—­çŠ¶æ€!
 ) else (
-    echo µ±Ç°µÚÈı·½ÈÏÖ¤·şÎñ´¦ÓÚ¿ªÆô×´Ì¬!
-    echo ±äÁ¿ĞÅÏ¢:%Auth%
+    echo å½“å‰ç¬¬ä¸‰æ–¹è®¤è¯æœåŠ¡å¤„äºå¼€å¯çŠ¶æ€!
+    echo å˜é‡ä¿¡æ¯:%Auth%
 )
 goto l
 
 :ChoiceAuth
-::Ñ¡ÔñÈÏÖ¤·şÎñÆ÷
+@REM é€‰æ‹©è®¤è¯æœåŠ¡å™¨
 if "%CustomAuthURL%" neq "" (
-    echo ¼ì²âµ½ÒÑÅäÖÃ×Ô¶¨ÒåµÄÈÏÖ¤·şÎñÆ÷!
-    echo µ±Ç°×Ô¶¨ÒåµÄÈÏÖ¤·şÎñÆ÷:%CustomAuthURL%
-    echo ÊÇ·ñÖ±½ÓÆôÓÃµ±Ç°×Ô¶¨ÒåµÄÈÏÖ¤·şÎñÆ÷?
+    echo æ£€æµ‹åˆ°å·²é…ç½®è‡ªå®šä¹‰çš„è®¤è¯æœåŠ¡å™¨!
+    echo å½“å‰è‡ªå®šä¹‰çš„è®¤è¯æœåŠ¡å™¨:%CustomAuthURL%
+    echo æ˜¯å¦ç›´æ¥å¯ç”¨å½“å‰è‡ªå®šä¹‰çš„è®¤è¯æœåŠ¡å™¨?
     goto JudgeChoiceCustomAuthServer
 ) else (
     goto JudgeChoiceDefaultAuthServer
@@ -422,16 +415,16 @@ if "%uol%" == "FastConfig" (
 :FastChoiceDefaultAuthServer
 
 if "%DefaultAuthURLChoice%" == "/D l" (
-    set "DefaultAuthURLEcho=(Ä¬ÈÏ)"
+    set "DefaultAuthURLEcho=(é»˜è®¤)"
 ) else (
     set "DefaultAuthURLEcho="
 )
 
-echo ÊÇ·ñÒª¿ìËÙÊ¹ÓÃLittleSkin×÷ÎªÈÏÖ¤·şÎñÆ÷:
-echo ¼üÈë y ¿ìËÙÊ¹ÓÃLittleSkin×÷ÎªÈÏÖ¤·şÎñÆ÷%DefaultAuthURLEcho%
-echo ¼üÈë n »ò a Ç°ÍùÈÏÖ¤·şÎñÆ÷Ñ¡ÔñÁĞ±í
-echo ¼üÈë l Ç°ÍùÈÏÖ¤·şÎñÆ÷ÅäÖÃÑ¡Ïî
-echo ¼üÈë x ½áÊøÅú´¦ÀíÔËĞĞ
+echo æ˜¯å¦è¦å¿«é€Ÿä½¿ç”¨LittleSkinä½œä¸ºè®¤è¯æœåŠ¡å™¨:
+echo é”®å…¥ y å¿«é€Ÿä½¿ç”¨LittleSkinä½œä¸ºè®¤è¯æœåŠ¡å™¨%DefaultAuthURLEcho%
+echo é”®å…¥ n æˆ– a å‰å¾€è®¤è¯æœåŠ¡å™¨é€‰æ‹©åˆ—è¡¨
+echo é”®å…¥ l å‰å¾€è®¤è¯æœåŠ¡å™¨é…ç½®é€‰é¡¹
+echo é”®å…¥ x ç»“æŸæ‰¹å¤„ç†è¿è¡Œ
 choice %AuthWaitTime% /C ynalx /CS %DefaultAuthURLChoice%
 if %errorlevel% == 1 set "AuthURL=https://littleskin.cn/api/yggdrasil" && goto SetAuth
 if %errorlevel% == 2 goto ChoiceDefaultAuthServer
@@ -443,21 +436,21 @@ color %colorError%
 
 title Error-XE-SakuraMaple_MCSL-vX-Preview
 
-echo ************************·¢ÉúÒì³£************************
+echo ************************å‘ç”Ÿå¼‚å¸¸************************
 
 pause
 
 goto FastChoiceDefaultAuthServer
 
 :ChoiceDefaultAuthServer
-::Ä¬ÈÏÈÏÖ¤·şÎñÆ÷ÁĞ±í
+@REM é»˜è®¤è®¤è¯æœåŠ¡å™¨åˆ—è¡¨
 
-echo ÇëÑ¡ÔñÒªÊ¹ÓÃµÄµÚÈı·½ÈÏÖ¤·şÎñÆ÷:
-echo ¼üÈë l Ê¹ÓÃLittleSkin×÷ÎªÈÏÖ¤·şÎñÆ÷
-echo ¼üÈë m Ê¹ÓÃMUA(Minecraft¸ßĞ£ÁªÃË)×÷ÎªÈÏÖ¤·şÎñÆ÷
-echo ¼üÈë c Ê¹ÓÃ×Ô¶¨ÒåµÄÈÏÖ¤·şÎñÆ÷
-echo ¼üÈë b ·µ»ØÉÏÒ»¼¶²Ëµ¥
-echo ¼üÈë x ½áÊøÅú´¦ÀíÔËĞĞ
+echo è¯·é€‰æ‹©è¦ä½¿ç”¨çš„ç¬¬ä¸‰æ–¹è®¤è¯æœåŠ¡å™¨:
+echo é”®å…¥ l ä½¿ç”¨LittleSkinä½œä¸ºè®¤è¯æœåŠ¡å™¨
+echo é”®å…¥ m ä½¿ç”¨MUA(Minecrafté«˜æ ¡è”ç›Ÿ)ä½œä¸ºè®¤è¯æœåŠ¡å™¨
+echo é”®å…¥ c ä½¿ç”¨è‡ªå®šä¹‰çš„è®¤è¯æœåŠ¡å™¨
+echo é”®å…¥ b è¿”å›ä¸Šä¸€çº§èœå•
+echo é”®å…¥ x ç»“æŸæ‰¹å¤„ç†è¿è¡Œ
 choice /C lmcbx /CS 
 if %errorlevel% == 1 set "AuthURL=https://littleskin.cn/api/yggdrasil" && goto SetAuth
 if %errorlevel% == 2 set "AuthURL=https://skin.mualliance.ltd/api/union/yggdrasil" && goto SetAuth
@@ -469,7 +462,7 @@ color %colorError%
 
 title Error-XE-SakuraMaple_MCSL-vX-Preview
 
-echo ************************·¢ÉúÒì³£************************
+echo ************************å‘ç”Ÿå¼‚å¸¸************************
 
 pause
 
@@ -477,10 +470,10 @@ goto ChoiceDefaultAuthServer
 
 :FastChoiceCustomAuthServer
 
-echo ¼üÈë y ÆôÓÃ%echoDefault%
-echo ÊäÈë n ´ÓÄ¬ÈÏµÄÈÏÖ¤·şÎñÆ÷ÁĞ±íÖĞÑ¡Ôñ
-echo ÊäÈë a ´ÓÔ¤ÉèµÄÈÏÖ¤·şÎñÆ÷ÁĞ±íÖĞÑ¡Ôñ
-echo ÊäÈë x ½áÊøÅú´¦ÀíÔËĞĞ
+echo é”®å…¥ y å¯ç”¨%echoDefault%
+echo è¾“å…¥ n ä»é»˜è®¤çš„è®¤è¯æœåŠ¡å™¨åˆ—è¡¨ä¸­é€‰æ‹©
+echo è¾“å…¥ a ä»é¢„è®¾çš„è®¤è¯æœåŠ¡å™¨åˆ—è¡¨ä¸­é€‰æ‹©
+echo è¾“å…¥ x ç»“æŸæ‰¹å¤„ç†è¿è¡Œ
 choice %AuthWaitTime% /C ynx /CS %DefaultChoice%
 if %errorlevel% == 1 set "AuthURL=%CustomAuthURL%" && goto SetAuth
 if %errorlevel% == 2 goto FastChoiceDefaultAuthServer
@@ -491,16 +484,16 @@ color %colorError%
 
 title Error-XE-SakuraMaple_MCSL-vX-Preview
 
-echo ************************·¢ÉúÒì³£************************
+echo ************************å‘ç”Ÿå¼‚å¸¸************************
 
 pause
 
 goto FastChoiceCustomAuthServer
 
 :ChoiceCustomAuthServer
-echo ¼üÈë y ÆôÓÃ
-echo ÊäÈë n ´ÓÄ¬ÈÏµÄÈÏÖ¤·şÎñÆ÷ÁĞ±íÖĞÑ¡Ôñ
-echo ÊäÈë x ½áÊøÅú´¦ÀíÔËĞĞ
+echo é”®å…¥ y å¯ç”¨
+echo è¾“å…¥ n ä»é»˜è®¤çš„è®¤è¯æœåŠ¡å™¨åˆ—è¡¨ä¸­é€‰æ‹©
+echo è¾“å…¥ x ç»“æŸæ‰¹å¤„ç†è¿è¡Œ
 choice /C ynx /CS
 if %errorlevel% == 1 set "AuthURL=%CustomAuthURL%" && goto SetAuth
 if %errorlevel% == 2 goto ChoiceDefaultAuthServer
@@ -510,7 +503,7 @@ color %colorError%
 
 title Error-XE-SakuraMaple_MCSL-vX-Preview
 
-echo ************************·¢ÉúÒì³£************************
+echo ************************å‘ç”Ÿå¼‚å¸¸************************
 
 pause
 
@@ -522,22 +515,22 @@ if %CustomAuthURL% neq "" (
     set "AuthURL=%CustomAuthURL%"
     goto SetAuth
 ) else (
-    echo Ã»ÓĞ¼ì²âµ½×Ô¶¨ÒåÈÏÖ¤·şÎñÆ÷ÅäÖÃĞÅÏ¢!
+    echo æ²¡æœ‰æ£€æµ‹åˆ°è‡ªå®šä¹‰è®¤è¯æœåŠ¡å™¨é…ç½®ä¿¡æ¯!
     goto ChoiceDefaultAuthServer
 )
 
 :SetAuth
-::ÅäÖÃÈÏÖ¤·şÎñĞÅÏ¢±äÁ¿
-echo ÕıÔÚĞ´ÈëÈÏÖ¤·şÎñ±äÁ¿¡­¡­
+@REM é…ç½®è®¤è¯æœåŠ¡ä¿¡æ¯å˜é‡
+echo æ­£åœ¨å†™å…¥è®¤è¯æœåŠ¡å˜é‡â€¦â€¦
 set "Auth=-javaagent:authlib-injector-1.2.5.jar=%AuthURL%"
 timeout /t 1
-::µÚÒ»´ÎÆô¶¯ĞĞÎª
+@REM ç¬¬ä¸€æ¬¡å¯åŠ¨è¡Œä¸º
 %FirstStart%
-::ÊÇ·ñÁ¢¼´ÖØÆô·şÎñÆ÷
+@REM æ˜¯å¦ç«‹å³é‡å¯æœåŠ¡å™¨
 echo.
-echo ¼üÈë"y"Á¢¼´Æô¶¯/ÖØÆô·şÎñÆ÷
-echo ¼üÈë"n"·µ»ØÉÏÒ»¼¶²Ëµ¥
-echo ¼üÈë"x"ÍË³öÅú´¦Àí
+echo é”®å…¥"y"ç«‹å³å¯åŠ¨/é‡å¯æœåŠ¡å™¨
+echo é”®å…¥"n"è¿”å›ä¸Šä¸€çº§èœå•
+echo é”®å…¥"x"é€€å‡ºæ‰¹å¤„ç†
 choice /C ynx /CS
 if %errorlevel% == 1 goto r
 if %errorlevel% == 2 goto bc
@@ -547,23 +540,23 @@ color %colorError%
 
 title Error-XE-SakuraMaple_MCSL-vX-Preview
 
-echo ************************·¢ÉúÒì³£************************
+echo ************************å‘ç”Ÿå¼‚å¸¸************************
 
 pause
 
 goto SetAuth
 
 :ClearAuth
-::Çå³ıÈÏÖ¤·şÎñĞÅÏ¢±äÁ¿
-echo ÕıÔÚÇå³ıÈÏÖ¤·şÎñ±äÁ¿¡­¡­
+@REM æ¸…é™¤è®¤è¯æœåŠ¡ä¿¡æ¯å˜é‡
+echo æ­£åœ¨æ¸…é™¤è®¤è¯æœåŠ¡å˜é‡â€¦â€¦
 set "AuthURL="
-::µÚÒ»´ÎÆô¶¯ĞĞÎª
+@REM ç¬¬ä¸€æ¬¡å¯åŠ¨è¡Œä¸º
 %FirstStart%
-::ÊÇ·ñÁ¢¼´ÖØÆô·şÎñÆ÷
+@REM æ˜¯å¦ç«‹å³é‡å¯æœåŠ¡å™¨
 echo.
-echo ¼üÈë"y"Á¢¼´ÖØÆô·şÎñÆ÷
-echo ¼üÈë"n"·µ»ØÉÏÒ»¼¶²Ëµ¥
-echo ¼üÈë"x"ÍË³öÅú´¦Àí
+echo é”®å…¥"y"ç«‹å³é‡å¯æœåŠ¡å™¨
+echo é”®å…¥"n"è¿”å›ä¸Šä¸€çº§èœå•
+echo é”®å…¥"x"é€€å‡ºæ‰¹å¤„ç†
 choice /C ynx /CS
 if %errorlevel% == 1 goto r
 if %errorlevel% == 2 goto bc
@@ -573,7 +566,7 @@ color %colorError%
 
 title Error-XE-SakuraMaple_MCSL-vX-Preview
 
-echo ************************·¢ÉúÒì³£************************
+echo ************************å‘ç”Ÿå¼‚å¸¸************************
 
 pause
 
@@ -583,7 +576,7 @@ goto ClearAuth
 
 title Minecraft Server-SakuraMaple_MCSL-vX-Preview
 color %colorRunning%
-::Çå¿ÕÊ×´ÎÆô¶¯ÅäÖÃĞÅÏ¢
+@REM æ¸…ç©ºé¦–æ¬¡å¯åŠ¨é…ç½®ä¿¡æ¯
 if "%FirstStart%" neq "" set "FirstStart="
 cls
 
@@ -611,60 +604,60 @@ if %errorlevel% == 0 (
 
 :rs
 
-::·şÎñÆ÷²ÎÊıÒıµ¼
-echo ¾¯¸æ:
-echo ÇëÎğÔÚ·şÎñÆ÷Õı³£ÔËĞĞÖĞÇ¿ĞĞ¹Ø±Õ!
-echo Ç¿ĞĞ¹Ø±Õ¿ÉÄÜµ¼ÖÂ´æµµĞÅÏ¢¶ªÊ§»òËğ»µ!
-echo ÈôĞèÒª¹Ø±Õ·şÎñÆ÷,ÇëÔÚ·şÎñÆ÷ÖÕ¶Ë¼üÈë stop ÃüÁî²¢°´"Enter(»Ø³µ/»»ĞĞ)"¼ü¹Ø±Õ·şÎñÆ÷!
-echo ÈôÓö¼û·şÎñÆ÷ÎŞÏìÓ¦,ÔÙ¿¼ÂÇ²ÉÈ¡Ç¿ĞĞ¹Ø±ÕµÄ´ëÊ©!
-echo ÈôÊ¹ÓÃ"ÃüÁîÌáÊ¾·û"»ò"Windows Terminal",ÇëÎğÊ¹ÓÃ¹â±ê×ó¼üÔÚ"ÃüÁîÌáÊ¾·û"»ò"Windows Terminal"Ñ¡ÔñÎÄ×Ö!
-echo ÈôĞèÒª¸´ÖÆÇë¾¡¿ìÍê³ÉÑ¡Ôñ²¢Ê¹ÓÃ"Enter(»Ø³µ/»»ĞĞ)"¼ü¸´ÖÆ!
-echo Èô²»É÷Ñ¡Ôñ,Çë°´ÈÎÒâ·½Ïò¼ü(ÉÏ/ÏÂ/×ó/ÓÒ)ÍÑÀëÑ¡ÔñÄ£Ê½!
-echo Ñ¡ÔñÄ£Ê½ÏÂ»áµ¹ÊÇ·şÎñÆ÷½ø³Ì±»¹ÒÆğ,³¤Ê±¼ä¹ÒÆğ¿ÉÄÜµ¼ÖÂ±ÀÀ£!
+@REM æœåŠ¡å™¨å‚æ•°å¼•å¯¼
+echo è­¦å‘Š:
+echo è¯·å‹¿åœ¨æœåŠ¡å™¨æ­£å¸¸è¿è¡Œä¸­å¼ºè¡Œå…³é—­!
+echo å¼ºè¡Œå…³é—­å¯èƒ½å¯¼è‡´å­˜æ¡£ä¿¡æ¯ä¸¢å¤±æˆ–æŸå!
+echo è‹¥éœ€è¦å…³é—­æœåŠ¡å™¨,è¯·åœ¨æœåŠ¡å™¨ç»ˆç«¯é”®å…¥ stop å‘½ä»¤å¹¶æŒ‰"Enter(å›è½¦/æ¢è¡Œ)"é”®å…³é—­æœåŠ¡å™¨!
+echo è‹¥é‡è§æœåŠ¡å™¨æ— å“åº”,å†è€ƒè™‘é‡‡å–å¼ºè¡Œå…³é—­çš„æªæ–½!
+echo è‹¥ä½¿ç”¨"å‘½ä»¤æç¤ºç¬¦"æˆ–"Windows Terminal",è¯·å‹¿ä½¿ç”¨å…‰æ ‡å·¦é”®åœ¨"å‘½ä»¤æç¤ºç¬¦"æˆ–"Windows Terminal"é€‰æ‹©æ–‡å­—!
+echo è‹¥éœ€è¦å¤åˆ¶è¯·å°½å¿«å®Œæˆé€‰æ‹©å¹¶ä½¿ç”¨"Enter(å›è½¦/æ¢è¡Œ)"é”®å¤åˆ¶!
+echo è‹¥ä¸æ…é€‰æ‹©,è¯·æŒ‰ä»»æ„æ–¹å‘é”®(ä¸Š/ä¸‹/å·¦/å³)è„±ç¦»é€‰æ‹©æ¨¡å¼!
+echo é€‰æ‹©æ¨¡å¼ä¸‹ä¼šå€’æ˜¯æœåŠ¡å™¨è¿›ç¨‹è¢«æŒ‚èµ·,é•¿æ—¶é—´æŒ‚èµ·å¯èƒ½å¯¼è‡´å´©æºƒ!
 timeout /t 11
 
 :rsr
 cls
-echo **µ±Ç°ÈÏÖ¤·şÎñÆ÷URL:%AuthURL%
-echo **Èç¹ûÆôÓÃÈÏÖ¤·şÎñÆ÷,Ôò±ØĞëÔÚserver.propertiesÎÄ¼şÖĞ
-echo **ÉèÖÃonline-mode=true,·ñÔò·şÎñÆ÷½«´¦ÓÚ**ÀëÏßÄ£Ê½**,ÈÏÖ¤·şÎñÆ÷²»ÉúĞ§
-echo ************************·şÎñÆ÷¿ªÊ¼Æô¶¯!************************
-::·şÎñÆ÷Æô¶¯²ÎÊı
+echo **å½“å‰è®¤è¯æœåŠ¡å™¨URL:%AuthURL%
+echo **å¦‚æœå¯ç”¨è®¤è¯æœåŠ¡å™¨,åˆ™å¿…é¡»åœ¨server.propertiesæ–‡ä»¶ä¸­
+echo **è®¾ç½®online-mode=true,å¦åˆ™æœåŠ¡å™¨å°†å¤„äº**ç¦»çº¿æ¨¡å¼**,è®¤è¯æœåŠ¡å™¨ä¸ç”Ÿæ•ˆ
+echo ************************æœåŠ¡å™¨å¼€å§‹å¯åŠ¨!************************
+@REM æœåŠ¡å™¨å¯åŠ¨å‚æ•°
 "%JVM%" -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=16M -XX:-UseAdaptiveSizePolicy -XX:-OmitStackTraceInFastThrow -Xmx%XmxSize%m -Xms%XmsSize%m %XmnStatus% %XssStatus% %Auth% %ServerFile% %gui%
-::·şÎñÆ÷Í£Ö¹ĞÅÏ¢
+@REM æœåŠ¡å™¨åœæ­¢ä¿¡æ¯
 color %colorError%
 
-echo ************************·şÎñÆ÷Í£Ö¹ÔËĞĞ!************************
+echo ************************æœåŠ¡å™¨åœæ­¢è¿è¡Œ!************************
 
 title Stop-XE-SakuraMaple_MCSL-vX-Preview
-::×Ô¶¯ÖØÆôÒıÈë(ÈôÎ´ÆôÓÃ×Ô¶¯ÖØÆô,Ôò¸Ãº¯ÊıÎª¿ÕÖµ)
+@REM è‡ªåŠ¨é‡å¯å¼•å…¥(è‹¥æœªå¯ç”¨è‡ªåŠ¨é‡å¯,åˆ™è¯¥å‡½æ•°ä¸ºç©ºå€¼)
 %Auto%
 
 timeout /t 8
 
 :e
-::Åú´¦Àí¹¦ÄÜ²Ëµ¥
+@REM æ‰¹å¤„ç†åŠŸèƒ½èœå•
 color %colorChoose%
-::Çå³ıÈÏÖ¤·şÎñÆ÷ÅäÖÃµÈ´ıÊ±¼äÓëÄ¬ÈÏÑ¡Ïî
+@REM æ¸…é™¤è®¤è¯æœåŠ¡å™¨é…ç½®ç­‰å¾…æ—¶é—´ä¸é»˜è®¤é€‰é¡¹
 if "%waitTime%" neq "" set "waitTime="
 if "%DefaultChoice%" neq "" set "DefaultChoice="
 if "%AuthWaitTime%" neq "" set "AuthWaitTime="
 if "%DefaultAuthURLChoice%" neq "" set "DefaultAuthURLChoice="
-::Åú´¦ÀíÅäÖÃ²Ëµ¥
-echo Çë¼üÈë¶ÔÓ¦×ÖÄ¸½øĞĞÏàÓ¦²Ù×÷:
+@REM æ‰¹å¤„ç†é…ç½®èœå•
+echo è¯·é”®å…¥å¯¹åº”å­—æ¯è¿›è¡Œç›¸åº”æ“ä½œ:
 echo.
-echo ¼üÈë"r"ÖØĞÂÆô¶¯
-echo ¼üÈë"l"½øÈëÈÏÖ¤Ñ¡Ïî(ÉèÖÃÈÏÖ¤·şÎñÆ÷)
-echo ¼üÈë"x"¹Ø±ÕÅú´¦Àí
-echo ¼üÈë"c"Çå¿ÕÖÕ¶ËÏûÏ¢
-echo ¼üÈë"v"²éÑ¯IPµØÖ·Óëµ±Ç°Ê¹ÓÃµÄJava°æ±¾
-echo ¼üÈë"a"ÉèÖÃ×Ô¶¯ÖØÆô×´Ì¬
-echo ¼üÈë"t"½øÈëĞí¿ÉĞ­ÒéÅäÖÃ²Ëµ¥
-echo ¼üÈë"s"ÇĞ»»·şÎñÆ÷GUIÏÔÊ¾×´Ì¬(½öÖ§³Ö²¿·Ö·şÎñÆ÷ºËĞÄ)
-echo ¼üÈë"4"ÇĞ»»·şÎñÆ÷ÖÕÖ¹ÑÕÉ«(ºì/»Æ[Ä¬ÈÏ])
-echo ¼üÈë"0"ÏÂÔØauthlib-injector(ÊµÑéĞÔ:¿ÉÄÜÎŞ·¨Õı³£¹¤×÷)
-echo ¼üÈë"i"²éÑ¯ÏµÍ³ĞÅÏ¢
-::ÅäÖÃUp One LevelÎª"MainConfig"
+echo é”®å…¥"r"é‡æ–°å¯åŠ¨
+echo é”®å…¥"l"è¿›å…¥è®¤è¯é€‰é¡¹(è®¾ç½®è®¤è¯æœåŠ¡å™¨)
+echo é”®å…¥"x"å…³é—­æ‰¹å¤„ç†
+echo é”®å…¥"c"æ¸…ç©ºç»ˆç«¯æ¶ˆæ¯
+echo é”®å…¥"v"æŸ¥è¯¢IPåœ°å€ä¸å½“å‰ä½¿ç”¨çš„Javaç‰ˆæœ¬
+echo é”®å…¥"a"è®¾ç½®è‡ªåŠ¨é‡å¯çŠ¶æ€
+echo é”®å…¥"t"è¿›å…¥è®¸å¯åè®®é…ç½®èœå•
+echo é”®å…¥"s"åˆ‡æ¢æœåŠ¡å™¨GUIæ˜¾ç¤ºçŠ¶æ€(ä»…æ”¯æŒéƒ¨åˆ†æœåŠ¡å™¨æ ¸å¿ƒ)
+echo é”®å…¥"4"åˆ‡æ¢æœåŠ¡å™¨ç»ˆæ­¢é¢œè‰²(çº¢/é»„[é»˜è®¤])
+echo é”®å…¥"0"ä¸‹è½½authlib-injector(å®éªŒæ€§:å¯èƒ½æ— æ³•æ­£å¸¸å·¥ä½œ)
+echo é”®å…¥"i"æŸ¥è¯¢ç³»ç»Ÿä¿¡æ¯
+@REM é…ç½®Up One Levelä¸º"MainConfig"
 set "uol=MainConfig"
 
 choice /C rxc4vlats0i /CS
@@ -684,7 +677,7 @@ color %colorError%
 
 title Error-XE-SakuraMaple_MCSL-vX-Preview
 
-echo ************************·¢ÉúÒì³£************************
+echo ************************å‘ç”Ÿå¼‚å¸¸************************
 
 pause
 
@@ -694,31 +687,31 @@ goto e
 
 if "%gui%" == "" (
     echo.
-    echo ÒÑ¹Ø±ÕGUIÏÔÊ¾!
+    echo å·²å…³é—­GUIæ˜¾ç¤º!
     set "gui=nogui"
     echo.
 ) else (
     echo.
-    echo ÒÑ¿ªÆôGUIÏÔÊ¾!
+    echo å·²å¼€å¯GUIæ˜¾ç¤º!
     set "gui="
     echo.
 )
 goto bc
 
 :a
-::×Ô¶¯ÖØÆôÅäÖÃ²Ëµ¥
+@REM è‡ªåŠ¨é‡å¯é…ç½®èœå•
 color %colorChoose%
 
 title Auto Restart-SakuraMaple_MCSL-vX-Preview
 
-echo ÊÇ·ñÒªÆôÓÃ·şÎñÆ÷Í£Ö¹ºó×Ô¶¯ÖØÆô(ÎŞÈËÖµÊØ)?
+echo æ˜¯å¦è¦å¯ç”¨æœåŠ¡å™¨åœæ­¢åè‡ªåŠ¨é‡å¯(æ— äººå€¼å®ˆ)?
 echo.
-echo ¼üÈë"y"¿ªÆô×Ô¶¯ÖØÆô
-echo ¼üÈë"n"¹Ø±Õ×Ô¶¯ÖØÆô
-echo ¼üÈë"m"»ØÅú´¦ÀíÅäÖÃ²Ëµ¥
-echo ¼üÈë"x"½áÊøÅú´¦ÀíÔËĞĞ
-echo ¼üÈë"i"²éÑ¯µ±Ç°×´Ì¬
-::ÅäÖÃUp One LevelÎª"AutoConfig"
+echo é”®å…¥"y"å¼€å¯è‡ªåŠ¨é‡å¯
+echo é”®å…¥"n"å…³é—­è‡ªåŠ¨é‡å¯
+echo é”®å…¥"m"å›æ‰¹å¤„ç†é…ç½®èœå•
+echo é”®å…¥"x"ç»“æŸæ‰¹å¤„ç†è¿è¡Œ
+echo é”®å…¥"i"æŸ¥è¯¢å½“å‰çŠ¶æ€
+@REM é…ç½®Up One Levelä¸º"AutoConfig"
 set "uol=AuthConfig"
 
 choice /C ynmxi /CS
@@ -732,40 +725,40 @@ color %colorError%
 
 title Error-XE-SakuraMaple_MCSL-vX-Preview
 
-echo ************************·¢ÉúÒì³£************************
+echo ************************å‘ç”Ÿå¼‚å¸¸************************
 
 pause
 
 goto a
 
 :AutoInfo
-::×Ô¶¯ÖØÆô×´Ì¬ĞÅÏ¢
+@REM è‡ªåŠ¨é‡å¯çŠ¶æ€ä¿¡æ¯
 color %colorChoose%
 
 title Auto Reboot Information-SakuraMaple_MCSL-vX-Preview
 
 if "%Auto%" == "" (
-    echo µ±Ç°·şÎñÆ÷×Ô¶¯ÖØÆô·şÎñ´¦ÓÚ¹Ø±Õ×´Ì¬
+    echo å½“å‰æœåŠ¡å™¨è‡ªåŠ¨é‡å¯æœåŠ¡å¤„äºå…³é—­çŠ¶æ€
 ) else (
-    echo µ±Ç°·şÎñÆ÷×Ô¶¯ÖØÆô¿ÉÄÜ´¦ÓÚ¿ªÆô×´Ì¬
-    echo ±äÁ¿ĞÅÏ¢:%Auto%
+    echo å½“å‰æœåŠ¡å™¨è‡ªåŠ¨é‡å¯å¯èƒ½å¤„äºå¼€å¯çŠ¶æ€
+    echo å˜é‡ä¿¡æ¯:%Auto%
 )
 pause
 goto a
 
 :SetAuto
-::×Ô¶¯ÖØÆô±äÁ¿Ğ´ÈëÓëĞ´ÈëºóÑ¡Ïî²Ëµ¥
+@REM è‡ªåŠ¨é‡å¯å˜é‡å†™å…¥ä¸å†™å…¥åé€‰é¡¹èœå•
 color %colorChoose%
-::Ğ´Èëº¯ÊıĞÅÏ¢
-echo ÕıÔÚÅäÖÃ×Ô¶¯ÖØÆô±äÁ¿¡­¡­
+@REM å†™å…¥å‡½æ•°ä¿¡æ¯
+echo æ­£åœ¨é…ç½®è‡ªåŠ¨é‡å¯å˜é‡â€¦â€¦
 set "Auto=goto AR"
-::×Ô¶¯ÖØÆôĞ´ÈëºóÑ¡Ïî²Ëµ¥
+@REM è‡ªåŠ¨é‡å¯å†™å…¥åé€‰é¡¹èœå•
 echo.
-echo ÊÇ·ñÒªÁ¢¼´Æô¶¯?
-echo ¼üÈë y Á¢¼´ÖØÆô
-echo ¼üÈë n ÉÔºóÖØÆô(·µ»Ø²Ëµ¥ºó¼üÈë r ÖØÆô)
-echo ¼üÈë x ÍË³öÅú´¦Àí
-echo ¼üÈë i ²éÑ¯×´Ì¬ĞÅÏ¢²¢·µ»Øµ½²Ëµ¥
+echo æ˜¯å¦è¦ç«‹å³å¯åŠ¨?
+echo é”®å…¥ y ç«‹å³é‡å¯
+echo é”®å…¥ n ç¨åé‡å¯(è¿”å›èœå•åé”®å…¥ r é‡å¯)
+echo é”®å…¥ x é€€å‡ºæ‰¹å¤„ç†
+echo é”®å…¥ i æŸ¥è¯¢çŠ¶æ€ä¿¡æ¯å¹¶è¿”å›åˆ°èœå•
 choice /C ynxi /CS
 if %errorlevel% == 1 goto rsr
 if %errorlevel% == 2 goto e
@@ -776,36 +769,36 @@ color %colorError%
 
 title Error-XE-SakuraMaple_MCSL-vX-Preview
 
-echo ************************·¢ÉúÒì³£************************
+echo ************************å‘ç”Ÿå¼‚å¸¸************************
 
 pause
 
 goto SetAuto
 
 :ShutAuto
-::×Ô¶¯ÖØÆô±äÁ¿Çå³ı
+@REM è‡ªåŠ¨é‡å¯å˜é‡æ¸…é™¤
 title Auto Reboot Configuration Clear-SakuraMaple_MCSL-vX-Preview
 
 color %colorChoose%
 
-echo ÕıÔÚÇå³ı×Ô¶¯ÖØÆô±äÁ¿¡­¡­
+echo æ­£åœ¨æ¸…é™¤è‡ªåŠ¨é‡å¯å˜é‡â€¦â€¦
 set "Auto="
 
 goto e
 
 :AR
-::×Ô¶¯ÖØÆôÄ£¿é
+@REM è‡ªåŠ¨é‡å¯æ¨¡å—
 color %colorChoose%
 title Auto Reboot Menu-SakuraMaple_MCSL-vX-Preview
-::×Ô¶¯ÖØÆôÑ¡Ïî²Ëµ¥
-::5sµÈ´ı²Ù×÷Ê±¼ä,ÈôÎŞ²Ù×÷,×Ô¶¯Ö´ĞĞÖØÆô
-echo ·şÎñÆ÷×Ô¶¯ÖØÆôÑ¡Ïî
+@REM è‡ªåŠ¨é‡å¯é€‰é¡¹èœå•
+@REM 5sç­‰å¾…æ“ä½œæ—¶é—´,è‹¥æ— æ“ä½œ,è‡ªåŠ¨æ‰§è¡Œé‡å¯
+echo æœåŠ¡å™¨è‡ªåŠ¨é‡å¯é€‰é¡¹
 echo.
-echo ¼üÈë"c"¿ìËÙÖØÆô(Ä¬ÈÏÖµ)
-echo ¼üÈë"e"·µ»ØÅú´¦ÀíÅäÖÃ²Ëµ¥(²»¸Ä±ä×Ô¶¯ÖØÆô×´Ì¬)
-echo ¼üÈë"s"¹Ø±Õ×Ô¶¯ÖØÆô,²¢·µ»ØÅú´¦ÀíÅäÖÃ²Ëµ¥
-echo ¼üÈë"x"ÍË³öÅú´¦Àí
-echo µÈ´ı³¬Ê±ºó×Ô¶¯Ö´ĞĞÖØÆô!
+echo é”®å…¥"c"å¿«é€Ÿé‡å¯(é»˜è®¤å€¼)
+echo é”®å…¥"e"è¿”å›æ‰¹å¤„ç†é…ç½®èœå•(ä¸æ”¹å˜è‡ªåŠ¨é‡å¯çŠ¶æ€)
+echo é”®å…¥"s"å…³é—­è‡ªåŠ¨é‡å¯,å¹¶è¿”å›æ‰¹å¤„ç†é…ç½®èœå•
+echo é”®å…¥"x"é€€å‡ºæ‰¹å¤„ç†
+echo ç­‰å¾…è¶…æ—¶åè‡ªåŠ¨æ‰§è¡Œé‡å¯!
 
 choice /T 5 /C cesx /CS /D c
 if %errorlevel% == 1 goto rsr
@@ -817,27 +810,27 @@ color %colorError%
 
 title Error-XE-SakuraMaple_MCSL-vX-Preview
 
-echo ************************·¢ÉúÒì³£************************
+echo ************************å‘ç”Ÿå¼‚å¸¸************************
 
 pause
 
 goto AR
 
 :t
-::EulaÏà¹Ø"»ØÊÕ"²Ëµ¥
+@REM Eulaç›¸å…³"å›æ”¶"èœå•
 title Eula-XE-SakuraMaple_MCSL-vX-Preview
-echo ÇëÑ¡ÔñÒªÖ´ĞĞµÄ²Ù×÷
+echo è¯·é€‰æ‹©è¦æ‰§è¡Œçš„æ“ä½œ
 if "%uol%" == "null" (
-    echo ¼üÈë"r"ÖØĞÂÔËĞĞĞ­Òé¼ì²é½ø³Ì^(°üº¬´´½¨Ğ­ÒéÎÄ¼şÓëĞ´ÈëÍ¬ÒâĞÅÏ¢^)
-    echo ¼üÈë"s"Ìø¹ıĞ­Òé¼ì²é¿ªÊ¼Æô¶¯
+    echo é”®å…¥"r"é‡æ–°è¿è¡Œåè®®æ£€æŸ¥è¿›ç¨‹^(åŒ…å«åˆ›å»ºåè®®æ–‡ä»¶ä¸å†™å…¥åŒæ„ä¿¡æ¯^)
+    echo é”®å…¥"s"è·³è¿‡åè®®æ£€æŸ¥å¼€å§‹å¯åŠ¨
 ) else (
-    echo ¼üÈë"r"ÔËĞĞĞ­Òé¼ì²é½ø³Ì
-    echo ¼üÈë"s"ºöÂÔĞ­Òé¼ì²é²¢Æô¶¯
+    echo é”®å…¥"r"è¿è¡Œåè®®æ£€æŸ¥è¿›ç¨‹
+    echo é”®å…¥"s"å¿½ç•¥åè®®æ£€æŸ¥å¹¶å¯åŠ¨
 )
-echo ¼üÈë"b"½øÈëÅú´¦ÀíÅäÖÃ
-echo ¼üÈë"a"½øÈë×Ô¶¯ÖØÆôÅäÖÃ
-echo ¼üÈë"c"³·ÏúÍ¬ÒâĞí¿ÉĞ­Òé
-echo ¼üÈë"x"¹Ø±ÕÅú´¦Àí
+echo é”®å…¥"b"è¿›å…¥æ‰¹å¤„ç†é…ç½®
+echo é”®å…¥"a"è¿›å…¥è‡ªåŠ¨é‡å¯é…ç½®
+echo é”®å…¥"c"æ’¤é”€åŒæ„è®¸å¯åè®®
+echo é”®å…¥"x"å…³é—­æ‰¹å¤„ç†
 set "uol=EulaConfig"
 choice /C rsbacx /CS
 if %errorlevel% == 1 goto CheckEula
@@ -851,45 +844,45 @@ color %colorError%
 
 title Error-XE-SakuraMaple_MCSL-vX-Preview
 
-echo ************************·¢ÉúÒì³£************************
+echo ************************å‘ç”Ÿå¼‚å¸¸************************
 
 pause
 
 goto t
 
 :c
-::ÇåÆÁ¹¤¾ß
+@REM æ¸…å±å·¥å…·
 color %colorError%
 
 title Clear-XE-SakuraMaple_MCSL-vX-Preview
 
 cls
 
-echo ************************ÒÑÇå¿Õ************************
+echo ************************å·²æ¸…ç©º************************
 
 timeout /t 3
 
 goto e
 
 :v
-::ÔÓÏî¹¤¾ß
+@REM æ‚é¡¹å·¥å…·
 color %colorChoose%
 title Configuration Information-SakuraMaple_MCSL-vX-Preview
 cls
-::JVMĞÅÏ¢²éÑ¯
-echo µ±Ç°Ê¹ÓÃµÄJavaĞÅÏ¢:
+@REM JVMä¿¡æ¯æŸ¥è¯¢
+echo å½“å‰ä½¿ç”¨çš„Javaä¿¡æ¯:
 "%JVM%" -version
 echo.
 pause
-::IPµØÖ·ĞÅÏ¢²éÑ¯
-echo IPµØÖ·ÅäÖÃĞÅÏ¢:
+@REM IPåœ°å€ä¿¡æ¯æŸ¥è¯¢
+echo IPåœ°å€é…ç½®ä¿¡æ¯:
 ipconfig
 pause
-::IPĞÅÏ¢¸ß¼¶²éÑ¯Ñ¡Ïî
-::8sÎŞ²Ù×÷Ö´ĞĞ·µ»ØÅú´¦Àí²Ëµ¥
+@REM IPä¿¡æ¯é«˜çº§æŸ¥è¯¢é€‰é¡¹
+@REM 8sæ— æ“ä½œæ‰§è¡Œè¿”å›æ‰¹å¤„ç†èœå•
 echo.
-echo ¼üÈë i ²é¿´IPµØÖ·ÏêÏ¸ĞÅÏ¢
-echo ¼üÈë b ·µ»Øµ½Åú´¦Àí²Ëµ¥
+echo é”®å…¥ i æŸ¥çœ‹IPåœ°å€è¯¦ç»†ä¿¡æ¯
+echo é”®å…¥ b è¿”å›åˆ°æ‰¹å¤„ç†èœå•
 choice /T 8 /C ib /CS /D b
 if %errorlevel% == 1 goto ifconfig
 if %errorlevel% == 2 goto e
@@ -898,14 +891,14 @@ color %colorError%
 
 title Error-XE-SakuraMaple_MCSL-vX-Preview
 
-echo ************************·¢ÉúÒì³£************************
+echo ************************å‘ç”Ÿå¼‚å¸¸************************
 
 pause
 
 goto v
 
 :ifconfig
-::ËùÓĞIPĞÅÏ¢²éÑ¯
+@REM æ‰€æœ‰IPä¿¡æ¯æŸ¥è¯¢
 cls
 ipconfig /all
 pause
@@ -920,25 +913,25 @@ if "%DefaultChoice%" neq "" set "DefaultChoice="
 if "%DefaultAuthURLChoice%" neq "" set "DefaultAuthURLChoice="
 if "%AuthWaitTime%" neq "" set "AuthWaitTime="
 echo.
-echo ±¾¹¦ÄÜÎªÊµÑéĞÔ¹¦ÄÜ,²»Ò»¶¨ÄÜÕı³£¹¤×÷!
+echo æœ¬åŠŸèƒ½ä¸ºå®éªŒæ€§åŠŸèƒ½,ä¸ä¸€å®šèƒ½æ­£å¸¸å·¥ä½œ!
 echo.
-echo Ä¬ÈÏÇé¿öÏÂ,ÎÄ¼ş»á±»ÏÂÔØÔÚµ±Ç°Åú´¦ÀíËùÔÚµÄÄ¿Â¼ÏÂ
-echo **ÄúËùÊ¹ÓÃµÄ°²È«Èí¼ş¿ÉÄÜÀ¹½Ø´ËĞĞÎª,Çëµã»÷ÔÊĞí!**
-echo ¸ù¾İÍøÂç»·¾³²»Í¬,¿ÉÄÜ»áÏÂÔØÊ§°Ü,ÈôÃ»ÄÜÍê³ÉÏÂÔØ,»òÏÂÔØÎÄ¼ş´óĞ¡Îª0×Ö½Ú
-echo ÇëÊ¹ÓÃä¯ÀÀÆ÷»òÏÂÔØÆ÷ÊÖ¶¯ÏÂÔØ
-echo ÏÂÔØÍê³Éºó½«ÎÄ¼ş·Åµ½Óë¸ÃÅú´¦ÀíÍ¬Ò»¸öÄ¿Â¼ÏÂ
+echo é»˜è®¤æƒ…å†µä¸‹,æ–‡ä»¶ä¼šè¢«ä¸‹è½½åœ¨å½“å‰æ‰¹å¤„ç†æ‰€åœ¨çš„ç›®å½•ä¸‹
+echo **æ‚¨æ‰€ä½¿ç”¨çš„å®‰å…¨è½¯ä»¶å¯èƒ½æ‹¦æˆªæ­¤è¡Œä¸º,è¯·ç‚¹å‡»å…è®¸!**
+echo æ ¹æ®ç½‘ç»œç¯å¢ƒä¸åŒ,å¯èƒ½ä¼šä¸‹è½½å¤±è´¥,è‹¥æ²¡èƒ½å®Œæˆä¸‹è½½,æˆ–ä¸‹è½½æ–‡ä»¶å¤§å°ä¸º0å­—èŠ‚
+echo è¯·ä½¿ç”¨æµè§ˆå™¨æˆ–ä¸‹è½½å™¨æ‰‹åŠ¨ä¸‹è½½
+echo ä¸‹è½½å®Œæˆåå°†æ–‡ä»¶æ”¾åˆ°ä¸è¯¥æ‰¹å¤„ç†åŒä¸€ä¸ªç›®å½•ä¸‹
 echo.
 echo BMCLAPI:
 echo https://bmclapi2.bangbang93.com/mirrors/authlib-injector/artifact/53/authlib-injector-1.2.5.jar
-echo ¹Ù·½:
+echo å®˜æ–¹:
 echo https://authlib-injector.yushi.moe/artifact/53/authlib-injector-1.2.5.jar
 echo.
-echo ÇëÑ¡ÔñÏÂÔØÔ´:
-echo ¼üÈë"b"Ê¹ÓÃBMCLAPIÏÂÔØÔ´ÏÂÔØ(PowerShell·½°¸)
-echo ¼üÈë"o"Ê¹ÓÃ¹Ù·½ÏÂÔØÔ´ÏÂÔØ(PowerShell·½°¸)
-echo ¼üÈë"l"Ê¹ÓÃcertutil·½°¸´Ó¹Ù·½ÏÂÔØÔ´ÏÂÔØ(ÊÊÓÃÓÚPowerShell²»¿ÉÓÃÊ±)
-echo ¼üÈë"u"·µ»ØÉÏÒ»¼¶²Ëµ¥
-echo ¼üÈë"x"ÍË³öÅú´¦Àí
+echo è¯·é€‰æ‹©ä¸‹è½½æº:
+echo é”®å…¥"b"ä½¿ç”¨BMCLAPIä¸‹è½½æºä¸‹è½½(PowerShellæ–¹æ¡ˆ)
+echo é”®å…¥"o"ä½¿ç”¨å®˜æ–¹ä¸‹è½½æºä¸‹è½½(PowerShellæ–¹æ¡ˆ)
+echo é”®å…¥"l"ä½¿ç”¨certutilæ–¹æ¡ˆä»å®˜æ–¹ä¸‹è½½æºä¸‹è½½(é€‚ç”¨äºPowerShellä¸å¯ç”¨æ—¶)
+echo é”®å…¥"u"è¿”å›ä¸Šä¸€çº§èœå•
+echo é”®å…¥"x"é€€å‡ºæ‰¹å¤„ç†
 choice /C oblux /CS
 if %errorlevel% == 1 powershell -Command "Invoke-WebRequest -Uri https://bmclapi2.bangbang93.com/mirrors/authlib-injector/artifact/53/authlib-injector-1.2.5.jar -OutFile .\authlib-injector-1.2.5.jar" && goto AuthLibCheck
 if %errorlevel% == 2 powershell -Command "Invoke-WebRequest -Uri https://authlib-injector.yushi.moe/artifact/53/authlib-injector-1.2.5.jar -OutFile .\authlib-injector-1.2.5.jar" && goto AuthLibCheck
@@ -949,33 +942,33 @@ color %colorError%
 
 title Error-XE-SakuraMaple_MCSL-vX-Preview
 
-echo ************************·¢ÉúÒì³£************************
+echo ************************å‘ç”Ÿå¼‚å¸¸************************
 
 pause
 
 goto DownloadAuth
 
 :CreateEula
-::EulaĞ­ÒéÎÄ¼ş´´½¨
+@REM Eulaåè®®æ–‡ä»¶åˆ›å»º
 title Eula-XE-SakuraMaple_MCSL-vX-Preview
-echo ÕıÔÚ´´½¨¡­
+echo æ­£åœ¨åˆ›å»ºâ€¦
 type nul > .\eula.txt
 goto WriteEula
 
 :WriteEula
 title Eula-XE-SakuraMaple_MCSL-vX-Preview
-echo ÕıÔÚĞ´Èë¡­
+echo æ­£åœ¨å†™å…¥â€¦
 echo eula=true> .\eula.txt
-echo ÕıÔÚÖØĞÂÔËĞĞ¼ì²é¡­
+echo æ­£åœ¨é‡æ–°è¿è¡Œæ£€æŸ¥â€¦
 goto CheckEula
 
 :FalseEula
-echo ³·ÏúÍ¬ÒâĞí¿ÉĞ­Òé²Ëµ¥
-echo ¼üÈë"c"Çå³ıĞí¿ÉÄÚÈİ
-echo ¼üÈë"d"É¾³ıĞí¿ÉÎÄ¼ş
-echo ¼üÈë"b"·µ»ØÉÏÒ»¼¶²Ëµ¥
-echo ¼üÈë"i"²é¿´µ±Ç°Ğí¿ÉĞ­Òé×´Ì¬(»ùÓÚ±äÁ¿,¿ÉÄÜ²»×¼È·)
-echo ¼üÈë"x"ÍË³öÅú´¦Àí
+echo æ’¤é”€åŒæ„è®¸å¯åè®®èœå•
+echo é”®å…¥"c"æ¸…é™¤è®¸å¯å†…å®¹
+echo é”®å…¥"d"åˆ é™¤è®¸å¯æ–‡ä»¶
+echo é”®å…¥"b"è¿”å›ä¸Šä¸€çº§èœå•
+echo é”®å…¥"i"æŸ¥çœ‹å½“å‰è®¸å¯åè®®çŠ¶æ€(åŸºäºå˜é‡,å¯èƒ½ä¸å‡†ç¡®)
+echo é”®å…¥"x"é€€å‡ºæ‰¹å¤„ç†
 choice /C dcbix /CS
 if %errorlevel% == 1 goto DeleteEula
 if %errorlevel% == 2 goto ClearEula
@@ -987,7 +980,7 @@ color %colorError%
 
 title Error-XE-SakuraMaple_MCSL-vX-Preview
 
-echo ************************·¢ÉúÒì³£************************
+echo ************************å‘ç”Ÿå¼‚å¸¸************************
 
 pause
 
@@ -995,14 +988,14 @@ goto FalseEula
 
 :EulaInfo
 if "%EulaFile%" == "1" (
-    echo Ğí¿ÉĞ­ÒéÎÄ¼ş´æÔÚ!
+    echo è®¸å¯åè®®æ–‡ä»¶å­˜åœ¨!
 ) else (
-    echo Ğí¿ÉĞ­ÒéÎÄ¼ş ²» ´æÔÚ!
+    echo è®¸å¯åè®®æ–‡ä»¶ ä¸ å­˜åœ¨!
 )
 if "%EulaContent%" == "1" (
-    echo Ğ­ÒéÄÚÈİ×´Ì¬Õı³£!
+    echo åè®®å†…å®¹çŠ¶æ€æ­£å¸¸!
 ) else (
-    echo Ğ­ÒéÄÚÈİ×´Ì¬Òì³£!
+    echo åè®®å†…å®¹çŠ¶æ€å¼‚å¸¸!
 )
 
 timeout /t 5
@@ -1010,18 +1003,18 @@ goto FalseEula
 
 :ClearEula
 if exist .\eula.txt (
-    echo Õâ½«»áÇå¿ÕÓë±¾Åú´¦ÀíÍ¬Ä¿Â¼ÏÂµÄ"eula.txt"ÎÄ¼şµÄËùÓĞÄÚÈİ!
+    echo è¿™å°†ä¼šæ¸…ç©ºä¸æœ¬æ‰¹å¤„ç†åŒç›®å½•ä¸‹çš„"eula.txt"æ–‡ä»¶çš„æ‰€æœ‰å†…å®¹!
     goto ClearEulaChoice
 ) else (
-    echo Ã»ÓĞÕÒµ½Ğ­ÒéÎÄ¼ş!
+    echo æ²¡æœ‰æ‰¾åˆ°åè®®æ–‡ä»¶!
     set "EulaFile=0"
     timeout /t 3
     goto FalseEula
 )
 
 :ClearEulaChoice
-echo ÊÇ·ñ¼ÌĞø?
-echo ¼üÈë"y"Ö´ĞĞÇå³ıÃüÁî,¼üÈë"n"·µ»Øµ½³·ÏúĞí¿ÉĞ­Òé²Ëµ¥,¼üÈë"x"ÍË³öÅú´¦Àí
+echo æ˜¯å¦ç»§ç»­?
+echo é”®å…¥"y"æ‰§è¡Œæ¸…é™¤å‘½ä»¤,é”®å…¥"n"è¿”å›åˆ°æ’¤é”€è®¸å¯åè®®èœå•,é”®å…¥"x"é€€å‡ºæ‰¹å¤„ç†
 choice /C ynx /CS
 if %errorlevel% == 1 goto ClearEulaRun
 if %errorlevel% == 2 goto FalseEula
@@ -1031,35 +1024,35 @@ color %colorError%
 
 title Error-XE-SakuraMaple_MCSL-vX-Preview
 
-echo ************************·¢ÉúÒì³£************************
+echo ************************å‘ç”Ÿå¼‚å¸¸************************
 
 pause
 
 goto ClearEulaChoice
 
 :ClearEulaRun
-echo ÕıÔÚÇå¿Õ¡­
+echo æ­£åœ¨æ¸…ç©ºâ€¦
 echo echo "" 1>nul 2>eula.txt
 
 findstr "" .\eula.txt >nul
 if %errorlevel% == 2 (
-    echo Çå³ı³É¹¦!
+    echo æ¸…é™¤æˆåŠŸ!
     set "EulaContent=0"
     timeout /t 3
     goto ClearEulaRunChoice
 ) else (
-    echo Çå³ı³öÏÖ´íÎó!
-    echo ¿ÉÄÜÊÇÈ¨ÏŞ²»×ã
+    echo æ¸…é™¤å‡ºç°é”™è¯¯!
+    echo å¯èƒ½æ˜¯æƒé™ä¸è¶³
     timeout /t 3
     goto ClearEulaError
 )
 
 :ClearEulaRunChoice
 echo.
-echo ¼üÈë"b"·µ»Øµ½³·ÏúĞ­Òé²Ëµ¥
-echo ¼üÈë"t"Ìø×ªµ½Ğ­ÒéÅäÖÃ²Ëµ¥
-echo ¼üÈë"d"½øÒ»²½É¾³ıeulaĞ­ÒéÎÄ¼ş
-echo ¼üÈë"x"ÍË³öÅú´¦Àí
+echo é”®å…¥"b"è¿”å›åˆ°æ’¤é”€åè®®èœå•
+echo é”®å…¥"t"è·³è½¬åˆ°åè®®é…ç½®èœå•
+echo é”®å…¥"d"è¿›ä¸€æ­¥åˆ é™¤eulaåè®®æ–‡ä»¶
+echo é”®å…¥"x"é€€å‡ºæ‰¹å¤„ç†
 choice /C btdx /CS
 if %errorlevel% == 1 goto FalseEula
 if %errorlevel% == 2 goto t
@@ -1070,15 +1063,15 @@ color %colorError%
 
 title Error-XE-SakuraMaple_MCSL-vX-Preview
 
-echo ************************·¢ÉúÒì³£************************
+echo ************************å‘ç”Ÿå¼‚å¸¸************************
 
 pause
 
 goto ClearEulaRunChoice
 
 :ClearEulaError
-echo ÊÇ·ñÖØÊÔ?
-echo ¼üÈë"y"ÖØÊÔ,¼üÈë"n"·µ»Øµ½³·ÏúĞí¿ÉĞ­Òé²Ëµ¥,¼üÈë"x"ÍË³öÅú´¦Àí
+echo æ˜¯å¦é‡è¯•?
+echo é”®å…¥"y"é‡è¯•,é”®å…¥"n"è¿”å›åˆ°æ’¤é”€è®¸å¯åè®®èœå•,é”®å…¥"x"é€€å‡ºæ‰¹å¤„ç†
 choice /C yn /CS
 if %errorlevel% == 1 goto ClearEula
 if %errorlevel% == 2 goto FalseEula
@@ -1088,7 +1081,7 @@ color %colorError%
 
 title Error-XE-SakuraMaple_MCSL-vX-Preview
 
-echo ************************·¢ÉúÒì³£************************
+echo ************************å‘ç”Ÿå¼‚å¸¸************************
 
 pause
 
@@ -1096,18 +1089,18 @@ goto ClearEulaError
 
 :DeleteEula
 if exist .\eula.txt (
-    echo È·¶¨ÒªÉ¾³ıĞ­ÒéÎÄ¼şÂï?
-    echo ×¢:Õâ½«»áÉ¾³ıÓëÅú´¦ÀíÍ¬Ä¿Â¼ÏÂµÄ eula.txt ÎÄ¼ş
+    echo ç¡®å®šè¦åˆ é™¤åè®®æ–‡ä»¶å˜›?
+    echo æ³¨:è¿™å°†ä¼šåˆ é™¤ä¸æ‰¹å¤„ç†åŒç›®å½•ä¸‹çš„ eula.txt æ–‡ä»¶
     goto DeleteEulaChoice
 ) else (
-    echo Ã»ÓĞÕÒµ½Ğ­ÒéÎÄ¼ş!
+    echo æ²¡æœ‰æ‰¾åˆ°åè®®æ–‡ä»¶!
     set "EulaFile=0"
     timeout /t 3
     goto FalseEula
 )
 
 :DeleteEulaChoice
-echo ¼üÈë"y"Ö´ĞĞÉ¾³ıÃüÁî,¼üÈë"n"·µ»Øµ½³·ÏúĞí¿ÉĞ­Òé²Ëµ¥,¼üÈë"x"ÍË³öÅú´¦Àí
+echo é”®å…¥"y"æ‰§è¡Œåˆ é™¤å‘½ä»¤,é”®å…¥"n"è¿”å›åˆ°æ’¤é”€è®¸å¯åè®®èœå•,é”®å…¥"x"é€€å‡ºæ‰¹å¤„ç†
 choice /C ynx /CS
 if %errorlevel% == 1 goto DeleteEulaRun
 if %errorlevel% == 2 goto FalseEula
@@ -1117,7 +1110,7 @@ color %colorError%
 
 title Error-XE-SakuraMaple_MCSL-vX-Preview
 
-echo ************************·¢ÉúÒì³£************************
+echo ************************å‘ç”Ÿå¼‚å¸¸************************
 
 pause
 
@@ -1127,11 +1120,11 @@ goto DeleteEulaChoice
 
 del /F /Q -hr eula.txt
 if exist .\eula.txt (
-    echo É¾³ıÊ§°Ü
-    echo Çë¼ì²éÊÇ·ñÓĞÈ¨ÏŞÉ¾³ı
+    echo åˆ é™¤å¤±è´¥
+    echo è¯·æ£€æŸ¥æ˜¯å¦æœ‰æƒé™åˆ é™¤
     goto DeleteEulaError
 ) else (
-    echo É¾³ı³É¹¦!
+    echo åˆ é™¤æˆåŠŸ!
     set "EulaFile=0"
     set "EulaContent=0"
     timeout /t 3
@@ -1140,9 +1133,9 @@ if exist .\eula.txt (
 
 :DeleteEulaRunChoice
 
-echo ¼üÈë"b"·µ»Øµ½³·ÏúĞ­Òé²Ëµ¥
-echo ¼üÈë"t"Ìø×ªµ½Ğ­ÒéÅäÖÃ²Ëµ¥
-echo ¼üÈë"x"ÍË³öÅú´¦Àí
+echo é”®å…¥"b"è¿”å›åˆ°æ’¤é”€åè®®èœå•
+echo é”®å…¥"t"è·³è½¬åˆ°åè®®é…ç½®èœå•
+echo é”®å…¥"x"é€€å‡ºæ‰¹å¤„ç†
 choice /C btx /CS
 if %errorlevel% == 1 goto FalseEula
 if %errorlevel% == 2 goto t
@@ -1152,15 +1145,15 @@ color %colorError%
 
 title Error-XE-SakuraMaple_MCSL-vX-Preview
 
-echo ************************·¢ÉúÒì³£************************
+echo ************************å‘ç”Ÿå¼‚å¸¸************************
 
 pause
 
 goto DeleteEulaRunChoice
 
 :DeleteEulaError
-echo ÊÇ·ñÖØÊÔ?
-echo ¼üÈë"y"ÔÙ´ÎÖ´ĞĞÉ¾³ı,¼üÈë"n"·µ»Øµ½³·ÏúĞ­Òé²Ëµ¥,¼üÈë"x"ÍË³öÅú´¦Àí
+echo æ˜¯å¦é‡è¯•?
+echo é”®å…¥"y"å†æ¬¡æ‰§è¡Œåˆ é™¤,é”®å…¥"n"è¿”å›åˆ°æ’¤é”€åè®®èœå•,é”®å…¥"x"é€€å‡ºæ‰¹å¤„ç†
 choice /C yn /CS
 if %errorlevel% == 1 goto FalseEula
 if %errorlevel% == 2 goto DeleteEula
@@ -1170,18 +1163,18 @@ color %colorError%
 
 title Error-XE-SakuraMaple_MCSL-vX-Preview
 
-echo ************************·¢ÉúÒì³£************************
+echo ************************å‘ç”Ÿå¼‚å¸¸************************
 
 pause
 
 goto DeleteEulaError
 
 :ChoiceModifyServer-properties
-echo µ±Ç°µÚÈı·½ÈÏÖ¤×´Ì¬ÒÑÆôÓÃ,Çë×¢Òâ:
-echo ¼ì²âµ½server.propertiesÎÄ¼şÖĞonline-mode=false»ò²»´æÔÚonline-modeÅäÖÃ!
-echo ÈÏÖ¤·şÎñÆ÷½«²»ÉúĞ§!
-echo ÊÇ·ñÒªĞŞ¸ÄÎªonline-mode=true?
-echo ¼üÈë"y"ĞŞ¸Ä,¼üÈë"n"²»ĞŞ¸Ä²¢¼ÌĞøÆô¶¯(²»ÆôÓÃÈÏÖ¤-ÀëÏßÄ£Ê½),¼üÈë"x"ÍË³öÅú´¦Àí
+echo å½“å‰ç¬¬ä¸‰æ–¹è®¤è¯çŠ¶æ€å·²å¯ç”¨,è¯·æ³¨æ„:
+echo æ£€æµ‹åˆ°server.propertiesæ–‡ä»¶ä¸­online-mode=falseæˆ–ä¸å­˜åœ¨online-modeé…ç½®!
+echo è®¤è¯æœåŠ¡å™¨å°†ä¸ç”Ÿæ•ˆ!
+echo æ˜¯å¦è¦ä¿®æ”¹ä¸ºonline-mode=true?
+echo é”®å…¥"y"ä¿®æ”¹,é”®å…¥"n"ä¸ä¿®æ”¹å¹¶ç»§ç»­å¯åŠ¨(ä¸å¯ç”¨è®¤è¯-ç¦»çº¿æ¨¡å¼),é”®å…¥"x"é€€å‡ºæ‰¹å¤„ç†
 choice /C yn /CS
 if %errorlevel% == 1 goto ModifyServer-properties
 if %errorlevel% == 2 goto rs
@@ -1191,15 +1184,15 @@ color %colorError%
 
 title Error-XE-SakuraMaple_MCSL-vX-Preview
 
-echo ************************·¢ÉúÒì³£************************
+echo ************************å‘ç”Ÿå¼‚å¸¸************************
 
 pause
 
 goto ChoiceModifyServer-properties
 
 :ModifyServer-properties
-::ĞŞ¸Äserver.propertiesÎÄ¼şonline-mode=true
-:: ¼ì²âserver.propertiesÎÄ¼şÖĞµÄonline-modeÅäÖÃ
+@REM ä¿®æ”¹server.propertiesæ–‡ä»¶online-mode=true
+@REM  æ£€æµ‹server.propertiesæ–‡ä»¶ä¸­çš„online-modeé…ç½®
 findstr "online-mode=" .\server.properties >nul
 if %errorlevel% == 1 (
     goto AddOnlineMode
@@ -1212,31 +1205,31 @@ if %errorlevel% == 1 (
         if %errorlevel% == 0 (
             goto ModifyOnlineMod
         ) else (
-            echo Î´ÖªµÄonline-modeÅäÖÃ!
-            echo ÇëÊÖ¶¯¼ì²éserver.propertiesÎÄ¼şÖĞµÄonline-modeÅäÖÃ,±¾´Î·şÎñÆ÷½«¼ÌĞøÆô¶¯
+            echo æœªçŸ¥çš„online-modeé…ç½®!
+            echo è¯·æ‰‹åŠ¨æ£€æŸ¥server.propertiesæ–‡ä»¶ä¸­çš„online-modeé…ç½®,æœ¬æ¬¡æœåŠ¡å™¨å°†ç»§ç»­å¯åŠ¨
             goto rs
         )
     )
 )
 
 :AddOnlineMode
-::server.propertiesÎÄ¼şÖĞÃ»ÓĞonline-modeÅäÖÃ
+@REM server.propertiesæ–‡ä»¶ä¸­æ²¡æœ‰online-modeé…ç½®
 echo online-mode=true >> .\server.properties
-echo ÒÑ³É¹¦Ìí¼Óonline-mode=trueµ½server.propertiesÎÄ¼ş!
+echo å·²æˆåŠŸæ·»åŠ online-mode=trueåˆ°server.propertiesæ–‡ä»¶!
 timeout /t 3
 goto CheckServer-propertiesOnlineMode
 
 :SetOnlineMod
-::server.propertiesÎÄ¼şÖĞonline-modeÅäÖÃÎªtrue
+@REM server.propertiesæ–‡ä»¶ä¸­online-modeé…ç½®ä¸ºtrue
 (findstr /v "online-mode=" .\server.properties && echo online-mode=true) > .\server.properties.tmp && move /y .\server.properties.tmp .\server.properties
-echo ÒÑ³É¹¦ÉèÖÃonline-mode=trueµ½server.propertiesÎÄ¼ş!
+echo å·²æˆåŠŸè®¾ç½®online-mode=trueåˆ°server.propertiesæ–‡ä»¶!
 timeout /t 3
 goto CheckServer-propertiesOnlineMode
 
 :ModifyOnlineMod
-::server.propertiesÎÄ¼şÖĞonline-modeÅäÖÃÎªfalse
+@REM server.propertiesæ–‡ä»¶ä¸­online-modeé…ç½®ä¸ºfalse
 (for /f "tokens=*" %%i in ('.\server.properties') do @echo %%i | findstr /v "online-mode=false" >nul || echo online-mode=true) > .\server.properties.tmp && move /y .\server.properties.tmp .\server.properties
-echo ÒÑ³É¹¦½«online-mode=falseĞŞ¸ÄÎªonline-mode=trueµ½server.propertiesÎÄ¼ş!
+echo å·²æˆåŠŸå°†online-mode=falseä¿®æ”¹ä¸ºonline-mode=trueåˆ°server.propertiesæ–‡ä»¶!
 timeout /t 3
 goto CheckServer-propertiesOnlineMode
 
@@ -1250,7 +1243,7 @@ pause
 goto bc
 
 :x
-::Åú´¦Àí°²È«ÍË³ö
+@REM æ‰¹å¤„ç†å®‰å…¨é€€å‡º
 title Exit-XE-SakuraMaple_MCSL-vX-Preview
 color %colorError%
 set "uol=Exit"

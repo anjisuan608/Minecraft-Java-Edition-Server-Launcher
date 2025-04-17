@@ -22,7 +22,9 @@
 <p><a href="https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powershell-on-windows" title="PowerShell">PowerShell</a>版暂缓开发</p>
 <p><a href="#%E7%AC%AC%E4%B8%89%E6%96%B9python%E7%89%88%E6%9C%AC%E5%AE%9E%E9%AA%8C%E6%80%A7" title="第三方Python版本">点击跳转</a>至第三方Python版本说明</p>
 
-<h2>若查看或编辑批处理文件时出现乱码,请使用"GB 2312"或"GBK"编码打开文件!</h2>
+<!-- <h2>若查看或编辑批处理文件时出现乱码,请使用"GB 2312"或"GBK"编码打开文件!</h2> 
+2025.4.17 已更换至 UTF-8 编码，不再需要使用GB 2312
+-->
 
 ## 批处理功能
 ### 第三方认证服务器
