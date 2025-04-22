@@ -185,7 +185,7 @@
 
 ## 第三方Python版本(实验性)
 
-<p>第三方Python版——由<a href="https://space.bilibili.com/34270103" title="Stever-java"> @Steverjava开发 </a></p>
+<p>第三方Python版——由<a href="https://space.bilibili.com/34270103" title="Stever-java"> @Steverjava </a>开发</p>
 <p>注: 第三方版本与该项目无关,请勿套用该项目相关条款处理第三方版本!</p>
 <ul>
   <li>GitHub: <a href="https://github.com/Steverjava/" title="Steverjava's GitHub user profile">开发者主页</a> <a href="https://github.com/Steverjava/Minecraft-Server-Launcher" title="Steverjava's GitHub Project profile">项目仓库</a></li>
