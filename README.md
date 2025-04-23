@@ -111,22 +111,29 @@
 
 ### LeavesMC
 <p>LeavesMC 改善了 Minecraft 的生态系统，提供快速、安全和稳定的软件，作为最特立独行的组织提供快速迭代和健康支持。</p>
-<p><a href="https://leavesmc.org/" title"LeavesMC">LeavesMC官网</a></p>
-<p><a href="https://leavesmc.org/downloads/leaves" title"Leaves">Leaves 下载</a></p>
-<p><a href="https://leavesmc.org/software/lumina" title"Lumina">Lumina 简介</a></p>
+<p><a href="https://leavesmc.org/" title="LeavesMC">LeavesMC官网</a></p>
+<p><a href="https://leavesmc.org/downloads/leaves" title="Leaves">Leaves 下载</a></p>
+<p><a href="https://leavesmc.org/software/lumina" title="Lumina">Lumina 简介</a></p>
 <br>
 
 ### PaperMC
 <p>PaperMC 通过快速、安全的软件和不断扩展的插件 API 改进了 Minecraft 的生态系统，作为使用最广泛、性能最强和最稳定的软件，提供快速发布和有用的支持。</p>
 <p><a href="https://papermc.io/" title="PaperMC">PaperMC核心官网</a></p>
-<p><a href="https://papermc.io/downloads/paper" title"Paper">Paper 下载</a></p>
-<p><a href="https://papermc.io/software/folia" title"Folia">Folia 简介</a></p>
+<p><a href="https://papermc.io/downloads/paper" title="Paper">Paper 下载</a></p>
+<p><a href="https://papermc.io/software/folia" title="Folia">Folia 简介</a></p>
+<br>
+
+### Leaf
+<p>一个 Paper 分支, 专注于寻找性能优化, Vanilla, 稳定之间的平衡, 为大型网络, 密集和高承载量场景设计</p>
+<p>注: Leaf 包含所有 Purpur 的补丁[来自<a href="https://www.leafmc.one/zh/docs/faq#%E2%9D%93-%C2%B7-leaf-%E6%98%AF%E5%90%A6%E5%8C%85%E6%8B%AC-purpur-yml" title="docs">Leaf-docs:常见问题与解答</a>]</p>
+<p><a href="https://www.leafmc.one/zh/" title="Leaf">Leaf核心官网</a></p>
+<p><a href="https://www.leafmc.one/zh/download" title="Leaf">Leaf 下载</a></p>
 <br>
 
 ### Purpur
 <p>Purpur 是基于 Paper 的 Minecraft 服务器软件。<br>它支持为 Bukkit、Spigot 和 Paper API 设计的插件。<br>Purpur 专注于提供尽可能多的可配置性，以允许服务器所有者根据自己的喜好自定义他们的服务器。</p>
 <p><a href="https://purpurmc.org/" title="Purpur">Purpur核心官网</a></p>
-<p><a href="https://purpurmc.org/download/purpur" title"Purpur">Purpur 下载</a></p>
+<p><a href="https://purpurmc.org/download/purpur" title="Purpur">Purpur 下载</a></p>
 <br>
 
 ### Sponge
