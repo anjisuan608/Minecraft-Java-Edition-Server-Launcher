@@ -190,6 +190,21 @@
 <p>警告:尚未测试该核心与启动批处理的可用性与兼容性，建议移步本项目的<a href="#%E7%AC%AC%E4%B8%89%E6%96%B9python%E7%89%88%E6%9C%AC%E5%AE%9E%E9%AA%8C%E6%80%A7" title="第三方Python版本">第三方Python版本</a>以获得支持，<br>开发者已完成对Mohist核心及其Fabric/NeoForge版本的启动测试!</p>
 <br>
 
+## 代理服务器
+### Velocity
+<p>Velocity 是一款现代、高性能的代理服务器。它以性能和稳定性为核心设计理念，是 Waterfall 的完整替代方案，并拥有自己的插件生态系统。</p>
+<p><a href="https://papermc.io/downloads/velocity" title="Velocity">Velocity 下载</a></p>
+
+### Waterfall
+<p><strong>Waterfall 已达到生命周期终点！它不再接受维护或支持。</strong><em>[来自<a href="https://papermc.io/software/waterfall" title="Waterfall - Software">官网</a>]</em></p>
+<p>Waterfall 是 BungeeCord 的分支，旨在改进性能和稳定性。</p>
+<p><a href="https://papermc.io/downloads/waterfall" title="Waterfall">Waterfall 下载</a>
+
+### BungeeCord
+<p>BungeeCord 是由 SpigotMC 团队内部编写的软件。它充当玩家客户端和连接的 Minecraft 服务器之间的代理。</p>
+<p><a href="https://ci.md-5.net/job/BungeeCord/" title="BungeeCord - Jenkins">BungeeCord 下载</a></p>
+
+
 ## 第三方Python版本(实验性)
 
 <p>第三方Python版——由<a href="https://space.bilibili.com/34270103" title="Stever-java"> @Steverjava </a>开发</p>

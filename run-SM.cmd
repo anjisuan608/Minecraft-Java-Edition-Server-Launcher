@@ -10,27 +10,15 @@ set "colorChoose=09"
 @REM 配置Up One Level为"null"
 set "uol=null"
 color %colorWarning%
-@REM 基本信息
-@REM 系统时间
-echo 当前系统时间: && time /t
-@REM 系统日期
-echo 当前系统日期: && date /t
-@REM 系统版本
-echo 正在运行的系统版本: && ver
-@REM 当前用户
-echo 启动批处理的用户: && whoami
-@REM 主机名称
-echo 主机名称: && hostname
-@REM IP配置信息
-echo IP地址配置信息: && ipconfig
-@REM 空行
-echo.
 @REM 设置JVM(Java路径)(支持环境变量)
 @REM 路径一直写到./bin/java.exe
 set "JVM=java"
+@REM 设置代理服务器启用状态
+@REM 若使用"Velocity"、"Waterfall"、"BungeeCord"等上游代理服务器,请将该变量设置为true
+set "ProxyServer=false"
 @REM 设置服务器核心文件名称,在变量等号后键入(一直接写到.jar)
 @REM 若核心没有实体的jar文件(如部分Forge、NeoForge核心,及其它核心采用同样策略的核心)请将该变量**留空**,按照下方说明填写 ServerTXT 变量!
-set "ServerJar=paper-1.8.8-445.jar"
+set "ServerJar=example-server.jar"
 @REM 特殊核心路径变量
 @REM 若使用的是部分Forge、NeoForge等核心,请在目录中找到Forge、NeoForge服务器安装器生成的"run.bat"文件
 @REM 右键->编辑
@@ -40,7 +28,7 @@ set "ServerJar=paper-1.8.8-445.jar"
 @REM 注:请务必看清文件扩展(后缀)名!当中的run.sh文件适用于Linux平台,请勿复制该文件的字段!
 @REM 开启文件扩展名显示:文件夹选项->查看,在下方的选项框中找到"隐藏已知文件类型的扩展名"取消勾选,应用并确定
 @REM 注:当 ServerJar 变量有内容时, ServerTXT变量 **不生效**
-set "ServerTXT=@libraries/net/minecraftforge/forge/1.20.1-47.2.20/win_args.txt"
+set "ServerTXT=@libraries\net\neoforged\neoforge\21.1.194\win_args.txt"
 @REM 核心方案(若没有留空ServerJar变量则优先采用ServerJar变量中的内容启动)
 if "%ServerJar%" neq "" (
     set "ServerFile=-jar "%ServerJar%""
@@ -83,6 +71,22 @@ set "DefaultChoice=/D y"
 @REM 首次启动批处理自动配置认证服务器等待时间与状态
 set "AuthWaitTime=/T 8"
 set "DefaultAuthURLChoice=/D l"
+
+@REM 基本信息
+@REM 系统时间
+echo 当前系统时间: && time /t
+@REM 系统日期
+echo 当前系统日期: && date /t
+@REM 系统版本
+echo 正在运行的系统版本: && ver
+@REM 当前用户
+echo 启动批处理的用户: && whoami
+@REM 主机名称
+echo 主机名称: && hostname
+@REM IP配置信息
+echo IP地址配置信息: && ipconfig
+@REM 空行
+echo.
 
 :bc
 title Jump-XE-SakuraMaple_MCSL-vX-Preview
@@ -589,12 +593,20 @@ if exist .\server.properties (
 if "%AuthURL%" == "" (
     goto rs
 ) else (
+    goto CheckProxyEnable
+)
+
+:CheckProxyEnable
+if "%ProxyServer%" == "true" (
+    goto rs
+) else (
     goto CheckServer-propertiesOnlineMode
 )
 
 :CheckServer-propertiesOnlineMode
 findstr "online-mode=true" .\server.properties >nul
 if %errorlevel% == 0 (
+    set "Online-Mode=true"
     goto rs
 ) else (
     goto ChoiceModifyServer-properties
@@ -616,9 +628,19 @@ timeout /t 11
 
 :rsr
 cls
-echo **当前认证服务器URL:%AuthURL%
-echo **如果启用认证服务器,则必须在server.properties文件中
-echo **设置online-mode=true,否则服务器将处于**离线模式**,认证服务器不生效
+if "%AuthURL%" neq "" (
+    echo **当前认证服务器URL:%AuthURL%
+    echo **如果启用认证服务器,则必须在server.properties文件中设置online-mode=true
+    echo **否则服务器将处于**离线模式**,认证服务器不生效
+)
+if "%ProxyServer%" == "true" (
+    echo **当前已设置为使用代理服务器模式**
+    echo **请参考配置文档正确配置认证行为,避免无法进入服务器**
+)
+if "%Online-Mode%" == "true" (
+    echo **当前已启用联机验证模式**
+    echo **玩家需要具备正确的账号才能进入服务器**
+)
 echo ************************服务器开始启动!************************
 @REM 服务器启动参数
 "%JVM%" -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=16M -XX:-UseAdaptiveSizePolicy -XX:-OmitStackTraceInFastThrow -Xmx%XmxSize%m -Xms%XmsSize%m %XmnStatus% %XssStatus% %Auth% %ServerFile% %gui%
@@ -1173,7 +1195,7 @@ echo 检测到server.properties文件中online-mode=false或不存在online-mode
 echo 认证服务器将不生效!
 echo 是否要修改为online-mode=true?
 echo 键入"y"修改,键入"n"不修改并继续启动(不启用认证-离线模式),键入"x"退出批处理
-choice /C yn /CS
+choice /C ynx /CS
 if %errorlevel% == 1 goto ModifyServer-properties
 if %errorlevel% == 2 goto rs
 if %errorlevel% == 3 goto x
