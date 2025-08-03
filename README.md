@@ -194,15 +194,18 @@
 ### Velocity
 <p>Velocity 是一款现代、高性能的代理服务器。它以性能和稳定性为核心设计理念，是 Waterfall 的完整替代方案，并拥有自己的插件生态系统。</p>
 <p><a href="https://papermc.io/downloads/velocity" title="Velocity">Velocity 下载</a></p>
+<br>
 
 ### Waterfall
 <p><strong>Waterfall 已达到生命周期终点！它不再接受维护或支持。</strong><em>[来自<a href="https://papermc.io/software/waterfall" title="Waterfall - Software">官网</a>]</em></p>
 <p>Waterfall 是 BungeeCord 的分支，旨在改进性能和稳定性。</p>
 <p><a href="https://papermc.io/downloads/waterfall" title="Waterfall">Waterfall 下载</a>
+<br>
 
 ### BungeeCord
 <p>BungeeCord 是由 SpigotMC 团队内部编写的软件。它充当玩家客户端和连接的 Minecraft 服务器之间的代理。</p>
 <p><a href="https://ci.md-5.net/job/BungeeCord/" title="BungeeCord - Jenkins">BungeeCord 下载</a></p>
+<br>
 
 
 ## 第三方Python版本(实验性)
@@ -213,7 +216,7 @@
   <li>GitHub: <a href="https://github.com/Steverjava/" title="Steverjava's GitHub user profile">开发者主页</a> <a href="https://github.com/Steverjava/Minecraft-Server-Launcher" title="Steverjava's GitHub Project profile">项目仓库</a></li>
   <li>Gitee: <a href="https://gitee.com/Steverjava/" title="Steverjava's Gitee user profile">开发者主页</a> <a href="https://gitee.com/Steverjava/Minecraft-Server-Launcher" title="Steverjava's Gitee Project profile">项目仓库</a></li>
   <li>GitCode: <a href="https://gitcode.com/Steverjava/" title="Steverjava's GitCode user profile">开发者主页</a> <a href="https://gitcode.com/Steverjava/Minecraft-Server-Launcher" title="Steverjava's GitCode Project profile">项目仓库</a></li>
-  <li>AtomGit: <em>敬请期待</em></li>
+  <li>AtomGit: <a href="https://atomgit.com/Steverjava/" title="Steverjava's AtomGit user profile">开发者主页</a> <a href="https://atomgit.com/Steverjava/Minecraft-Server-Launcher" title="Steverjava's AtomGit Project profile">项目仓库</a></li>
 </ul>
 
 
