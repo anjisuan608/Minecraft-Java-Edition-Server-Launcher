@@ -61,6 +61,8 @@ if "%XssTrue%" == "1" set "XssStatus=-Xss%XssSize%m"
 @REM 更多配置
 @REM 设置服务器GUI状态(留空为显示GUI,"nogui"为不显示GUI)
 set "gui="
+@REM 退出时是否退出终端(留空为结束后退出,"/B"为不退出)
+set "unshut="
 @REM 配置自定义的登录认证服务器(非必要,请留空!)
 @REM 注:已预置LittleSkin和MUA
 @REM 如果使用其它的认证服务器则写在下方变量的等号后
@@ -159,6 +161,9 @@ timeout /t 8
 
 
 :CheckEula
+if "%ProxyServer%" == "true" (
+    goto f
+)
 echo 正在检查许可协议状态…
 @REM Eula协议文件检查
 title Eula-XE-SakuraMaple_MCSL-vX-Preview
@@ -259,13 +264,15 @@ echo 键入"x"结束批处理运行
 echo 键入"m"配置更多选项
 echo 键入"s"切换服务器GUI显示状态(仅支持部分服务器核心)
 echo 键入"4"切换服务器终止颜色(红/黄[默认])
-choice %waitTime% /C ynx4ms /CS %DefaultChoice%
+echo 键入"b"切换退出时关闭终端模式
+choice %waitTime% /C ynx4msb /CS %DefaultChoice%
 if %errorlevel% == 1 set "FirstStart=goto r" && goto AuthLibCheck
 if %errorlevel% == 2 set "FirstStart=goto r" && goto ClearAuth
 if %errorlevel% == 3 goto x
 if %errorlevel% == 4 goto Colorful
 if %errorlevel% == 5 goto e
 if %errorlevel% == 6 goto nogui
+if %errorlevel% == 7 goto ShutdownSwitch
 
 color %colorError%
 
@@ -295,12 +302,13 @@ echo 键入"x"结束批处理运行
 echo 键入"c"进入批处理配置
 echo 键入"i"查询当前认证状态
 echo 键入"s"切换服务器GUI显示状态(仅支持部分服务器核心)
+echo 键入"b"切换退出时关闭终端模式
 echo 键入"4"切换服务器终止颜色(红/黄[默认])
 echo 键入"0"下载authlib-injector(实验性:可能无法正常工作)
 @REM 配置Up One Level为"AuthConfig"
 set "uol=AuthConfig"
 
-choice /C ync4xis0 /CS
+choice /C ync4xis0b /CS
 if %errorlevel% == 1 goto AuthLibCheck
 if %errorlevel% == 2 goto ClearAuth
 if %errorlevel% == 3 goto e
@@ -309,6 +317,7 @@ if %errorlevel% == 5 goto x
 if %errorlevel% == 6 goto AuthInfo
 if %errorlevel% == 7 goto nogui
 if %errorlevel% == 8 goto DownloadAuth
+if %errorlevel% == 9 goto ShutdownSwitch
 
 color %colorError%
 
@@ -1262,6 +1271,18 @@ pause
 
 goto bc
 
+:ShutdownSwitch
+if "%unshut%"=="" (
+    echo 切换到不关闭终端模式
+    set "unshut=/B"
+    echo.
+) else (
+    echo 切换到关闭终端模式
+    set "unshut="
+    echo.
+)
+goto bc
+
 :x
 @REM 批处理安全退出
 title Exit-XE-SakuraMaple_MCSL-vX-Preview
@@ -1269,4 +1290,4 @@ color %colorError%
 set "uol=Exit"
 timeout /t 1
 
-exit
+exit %unshut%
