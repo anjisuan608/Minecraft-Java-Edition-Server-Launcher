@@ -7,10 +7,10 @@
 
   |          | 仓库地址                                                                 | 仓库下载                                                                                   |
   |----------|------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
-  | GitHub   | [GitHub项目地址](https://github.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher)   | [GitHub仓库下载](https://github.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/releases/)   |
-  | GitCode  | [GitCode项目地址](https://gitcode.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher) | [GitCode仓库下载](https://gitcode.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/releases/) |
-  | Gitee    | [Gitee项目地址](https://gitee.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher)     | [Gitee仓库下载](https://gitee.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/releases/)     |
-  | AtomGit  | [AtomGit项目地址](https://atomgit.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher) | [AtomGit仓库下载](https://atomgit.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/tags?tab=release) |
+  | GitHub   | [项目地址](https://github.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher)   | [仓库下载](https://github.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/releases/)   |
+  | GitCode  | [项目地址](https://gitcode.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher) | [仓库下载](https://gitcode.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/releases/) |
+  | Gitee    | [项目地址](https://gitee.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher)     | [仓库下载](https://gitee.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/releases/)     |
+  | AtomGit  | [项目地址](https://atomgit.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher) | [仓库下载](https://atomgit.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/tags?tab=release) |
 
 ---
 
