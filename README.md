@@ -3,9 +3,9 @@
 
 ## 项目仓库(存储库)与项目文件下载
 
-若访问缓慢,可尝试前往以下站点的项目仓库查看/下载项目文件:
-
-  |          | 仓库地址                                                                 | 仓库下载                                                                                   |
+若访问缓慢,可尝试前往以下站点的项目仓库查看/下载项目文件:  
+**注:下载释放文件中的"\*.cmd或\*.bat文件"!**
+  |          | 仓库地址                                                                 | 文件下载                                                                                   |
   |----------|------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
   | GitHub   | [项目仓库](https://github.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher)   | [文件下载](https://github.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/releases/)   |
   | GitCode  | [项目仓库](https://gitcode.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher) | [文件下载](https://gitcode.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/releases/) |
