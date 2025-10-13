@@ -28,7 +28,7 @@ set "ServerJar=example-server.jar"
 @REM 注:请务必看清文件扩展(后缀)名!当中的run.sh文件适用于Linux平台,请勿复制该文件的字段!
 @REM 开启文件扩展名显示:文件夹选项->查看,在下方的选项框中找到"隐藏已知文件类型的扩展名"取消勾选,应用并确定
 @REM 注:当 ServerJar 变量有内容时, ServerTXT变量 **不生效**
-set "ServerTXT=@libraries\net\neoforged\neoforge\21.1.194\win_args.txt"
+set "ServerTXT=@libraries\net\neoforged\neoforge\21.1.211\win_args.txt"
 @REM 核心方案(若没有留空ServerJar变量则优先采用ServerJar变量中的内容启动)
 if "%ServerJar%" neq "" (
     set "ServerFile=-jar "%ServerJar%""
@@ -61,6 +61,8 @@ if "%XssTrue%" == "1" set "XssStatus=-Xss%XssSize%m"
 @REM 更多配置
 @REM 设置服务器GUI状态(留空为显示GUI,"nogui"为不显示GUI)
 set "gui="
+@REM 添加自定义启动参数(非必要请留空)
+set "CustomJVMArgs="
 @REM 退出时是否退出终端(留空为结束后退出,"/B"为不退出)
 set "unshut="
 @REM 配置自定义的登录认证服务器(非必要,请留空!)
@@ -352,13 +354,13 @@ pause
 goto bc
 
 :AuthLibCheck
-echo 正在检测authlib-injector-1.2.5.jar是否存在…
-if exist .\authlib-injector-1.2.5.jar (
-    echo 成功检测到"authlib-injector-1.2.5.jar"!
+echo 正在检测authlib-injector-1.2.6.jar是否存在…
+if exist .\authlib-injector-1.2.6.jar (
+    echo 成功检测到"authlib-injector-1.2.6.jar"!
     timeout /t 3
     goto ChoiceAuth
 ) else (
-    echo 没有找到"authlib-injector-1.2.5.jar"!
+    echo 没有找到"authlib-injector-1.2.6.jar"!
     echo 是否前往下载?
     goto AuthLibCheckChoice
 )
@@ -533,7 +535,7 @@ if %CustomAuthURL% neq "" (
 :SetAuth
 @REM 配置认证服务信息变量
 echo 正在写入认证服务变量……
-set "Auth=-javaagent:authlib-injector-1.2.5.jar=%AuthURL%"
+set "Auth=-javaagent:authlib-injector-1.2.6.jar=%AuthURL%"
 timeout /t 1
 @REM 第一次启动行为
 %FirstStart%
@@ -652,7 +654,7 @@ if "%Online-Mode%" == "true" (
 )
 echo ************************服务器开始启动!************************
 @REM 服务器启动参数
-"%JVM%" -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=16M -XX:-UseAdaptiveSizePolicy -XX:-OmitStackTraceInFastThrow -Xmx%XmxSize%m -Xms%XmsSize%m %XmnStatus% %XssStatus% %Auth% %ServerFile% %gui%
+"%JVM%" -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=16M -XX:-UseAdaptiveSizePolicy -XX:-OmitStackTraceInFastThrow -Xmx%XmxSize%m -Xms%XmsSize%m %XmnStatus% %XssStatus% %Auth% %CustomJVMArgs% %ServerFile% %gui%
 @REM 服务器停止信息
 color %colorError%
 
@@ -951,9 +953,9 @@ echo 请使用浏览器或下载器手动下载
 echo 下载完成后将文件放到与该批处理同一个目录下
 echo.
 echo BMCLAPI:
-echo https://bmclapi2.bangbang93.com/mirrors/authlib-injector/artifact/53/authlib-injector-1.2.5.jar
+echo https://bmclapi2.bangbang93.com/mirrors/authlib-injector/artifact/54/authlib-injector-1.2.6.jar
 echo 官方:
-echo https://authlib-injector.yushi.moe/artifact/53/authlib-injector-1.2.5.jar
+echo https://authlib-injector.yushi.moe/artifact/54/authlib-injector-1.2.6.jar
 echo.
 echo 请选择下载源:
 echo 键入"b"使用BMCLAPI下载源下载(PowerShell方案)
@@ -962,9 +964,9 @@ echo 键入"l"使用certutil方案从官方下载源下载(适用于PowerShell�
 echo 键入"u"返回上一级菜单
 echo 键入"x"退出批处理
 choice /C oblux /CS
-if %errorlevel% == 1 powershell -Command "Invoke-WebRequest -Uri https://bmclapi2.bangbang93.com/mirrors/authlib-injector/artifact/53/authlib-injector-1.2.5.jar -OutFile .\authlib-injector-1.2.5.jar" && goto AuthLibCheck
-if %errorlevel% == 2 powershell -Command "Invoke-WebRequest -Uri https://authlib-injector.yushi.moe/artifact/53/authlib-injector-1.2.5.jar -OutFile .\authlib-injector-1.2.5.jar" && goto AuthLibCheck
-if %errorlevel% == 3 certutil -urlcache -split -f https://authlib-injector.yushi.moe/artifact/53/authlib-injector-1.2.5.jar .\authlib-injector-1.2.5.jar && goto AuthLibCheck
+if %errorlevel% == 1 powershell -Command "Invoke-WebRequest -Uri https://bmclapi2.bangbang93.com/mirrors/authlib-injector/artifact/54/authlib-injector-1.2.6.jar -OutFile .\authlib-injector-1.2.6.jar" && goto AuthLibCheck
+if %errorlevel% == 2 powershell -Command "Invoke-WebRequest -Uri https://authlib-injector.yushi.moe/artifact/54/authlib-injector-1.2.6.jar -OutFile .\authlib-injector-1.2.6.jar" && goto AuthLibCheck
+if %errorlevel% == 3 certutil -urlcache -split -f https://authlib-injector.yushi.moe/artifact/54/authlib-injector-1.2.6.jar .\authlib-injector-1.2.6.jar && goto AuthLibCheck
 if %errorlevel% == 4 goto bc
 if %errorlevel% == 5 goto x
 color %colorError%
