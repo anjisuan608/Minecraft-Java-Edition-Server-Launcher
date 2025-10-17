@@ -5,13 +5,13 @@
 
 若访问缓慢,可尝试前往以下站点的项目仓库查看/下载项目文件:  
 **注:下载释放文件中的"`.cmd`或`.bat`文件"!**
-  代码托管站 | 项目仓库地址 | 文件下载
-  :----------------: | :----------------: | :----------------:
-  GitHub | [项目仓库](https://github.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher) | [文件下载](https://github.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/releases/)
-  GitCode | [项目仓库](https://gitcode.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher) | [文件下载](https://gitcode.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/releases/)
-  Gitee | [项目仓库](https://gitee.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher) | [文件下载](https://gitee.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/releases/)
-  GitLink | [项目仓库](https://gitlink.org.cn/anjisuan608/HONOR-AI-GameManager-Install-Tool) | [文件下载](https://gitlink.org.cn/anjisuan608/HONOR-AI-GameManager-Install-Tool/releases)
-  AtomGit | [项目仓库](https://atomgit.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher) | [文件下载](https://atomgit.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/tags?tab=release)
+代码托管站 | 项目仓库地址 | 文件下载
+:----------------: | :----------------: | :----------------:
+GitHub | [项目仓库](https://github.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher) | [文件下载](https://github.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/releases/)
+GitCode | [项目仓库](https://gitcode.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher) | [文件下载](https://gitcode.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/releases/)
+Gitee | [项目仓库](https://gitee.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher) | [文件下载](https://gitee.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/releases/)
+GitLink | [项目仓库](https://gitlink.org.cn/anjisuan608/HONOR-AI-GameManager-Install-Tool) | [文件下载](https://gitlink.org.cn/anjisuan608/HONOR-AI-GameManager-Install-Tool/releases)
+AtomGit | [项目仓库](https://atomgit.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher) | [文件下载](https://atomgit.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/tags?tab=release)
 
 ---
 
