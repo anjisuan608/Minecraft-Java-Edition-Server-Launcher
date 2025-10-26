@@ -12,7 +12,7 @@ GitHub | [项目仓库](https://github.com/anjisuan608/Minecraft-Java-Edition-Se
 GitCode | [项目仓库](https://gitcode.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher) | [文件下载](https://gitcode.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/releases/)
 Gitee | [项目仓库](https://gitee.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher) | [文件下载](https://gitee.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/releases/)
 GitLink | [项目仓库](https://gitlink.org.cn/anjisuan608/Minecraft-Java-Edition-Server-Launcher) | [文件下载](https://gitlink.org.cn/anjisuan608/Minecraft-Java-Edition-Server-Launcher/releases)
-AtomGit | [项目仓库](https://atomgit.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher) | [文件下载](https://atomgit.com/anjisuan608/Minecraft-Java-Edition-Server-Launcher/tags?tab=release)
+OpenAtom | [项目仓库](https://openatom.tech/anjisuan608/Minecraft-Java-Edition-Server-Launcher) | [文件下载](https://openatom.tech/anjisuan608/Minecraft-Java-Edition-Server-Launcher/tags?tab=release)
 
 ---
 
@@ -252,12 +252,12 @@ BungeeCord 是由 SpigotMC 团队内部编写的软件。它充当玩家客户�
 第三方Python版——由[@Steverjava](https://space.bilibili.com/34270103)开发  
 注: 第三方版本与该项目无关,请勿套用该项目相关条款处理第三方版本!
 
-|          | 开发者主页                                                         | 项目仓库                                                                                   |
-|----------|--------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
-| GitHub   | [开发者主页](https://github.com/Steverjava/)                       | [项目仓库](https://github.com/Steverjava/Minecraft-Server-Launcher)                        |
-| Gitee    | [开发者主页](https://gitee.com/Steverjava/)                        | [项目仓库](https://gitee.com/Steverjava/Minecraft-Server-Launcher)                         |
-| GitCode  | [开发者主页](https://gitcode.com/Steverjava/)                      | [项目仓库](https://gitcode.com/Steverjava/Minecraft-Server-Launcher)                       |
-| AtomGit  | [开发者主页](https://atomgit.com/Steverjava/)                      | [项目仓库](https://atomgit.com/Steverjava/Minecraft-Server-Launcher)                       |
+代码托管站 | 开发者主页 | 项目仓库 |
+:----------------: | :----------------: | :----------------:
+| GitHub | [开发者主页](https://github.com/Steverjava/) | [项目仓库](https://github.com/Steverjava/Minecraft-Server-Launcher) |
+| Gitee | [开发者主页](https://gitee.com/Steverjava/) | [项目仓库](https://gitee.com/Steverjava/Minecraft-Server-Launcher) |
+| GitCode | [开发者主页](https://gitcode.com/Steverjava/) | [项目仓库](https://gitcode.com/Steverjava/Minecraft-Server-Launcher) |
+| GitLink | [开发者主页](https://gitlink.org.cn/Steverjava/) | _敬请期待_
 
 
 
