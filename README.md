@@ -254,10 +254,10 @@ BungeeCord 是由 SpigotMC 团队内部编写的软件。它充当玩家客户�
 
 代码托管站 | 开发者主页 | 项目仓库 |
 :----------------: | :----------------: | :----------------:
-| GitHub | [开发者主页](https://github.com/Steverjava/) | [项目仓库](https://github.com/Steverjava/Minecraft-Server-Launcher) |
-| Gitee | [开发者主页](https://gitee.com/Steverjava/) | [项目仓库](https://gitee.com/Steverjava/Minecraft-Server-Launcher) |
-| GitCode | [开发者主页](https://gitcode.com/Steverjava/) | [项目仓库](https://gitcode.com/Steverjava/Minecraft-Server-Launcher) |
-| GitLink | [开发者主页](https://gitlink.org.cn/Steverjava/) | _敬请期待_
+GitHub | [开发者主页](https://github.com/Steverjava/) | [项目仓库](https://github.com/Steverjava/Minecraft-Server-Launcher)
+GitCode | [开发者主页](https://gitcode.com/Steverjava/) | [项目仓库](https://gitcode.com/Steverjava/Minecraft-Server-Launcher)
+Gitee | [开发者主页](https://gitee.com/Steverjava/) | [项目仓库](https://gitee.com/Steverjava/Minecraft-Server-Launcher)
+GitLink | [开发者主页](https://gitlink.org.cn/Steverjava/) | _敬请期待_
 
 
 
