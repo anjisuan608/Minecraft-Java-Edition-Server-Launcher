@@ -156,7 +156,8 @@ timeout /t 6
 goto x
 
 :FirstLaunch
-
+echo ************************当前Java信息************************
+"%JVM%" -version
 echo ************************正在自检,如需停止,请按Ctrl+C停止启动,按任意键跳过直接启动************************
 timeout /t 8
 
@@ -354,13 +355,13 @@ pause
 goto bc
 
 :AuthLibCheck
-echo 正在检测authlib-injector-1.2.6.jar是否存在…
-if exist .\authlib-injector-1.2.6.jar (
-    echo 成功检测到"authlib-injector-1.2.6.jar"!
+echo 正在检测authlib-injector-1.2.7.jar是否存在…
+if exist .\authlib-injector-1.2.7.jar (
+    echo 成功检测到"authlib-injector-1.2.7.jar"!
     timeout /t 3
     goto ChoiceAuth
 ) else (
-    echo 没有找到"authlib-injector-1.2.6.jar"!
+    echo 没有找到"authlib-injector-1.2.7.jar"!
     echo 是否前往下载?
     goto AuthLibCheckChoice
 )
@@ -535,7 +536,7 @@ if %CustomAuthURL% neq "" (
 :SetAuth
 @REM 配置认证服务信息变量
 echo 正在写入认证服务变量……
-set "Auth=-javaagent:authlib-injector-1.2.6.jar=%AuthURL%"
+set "Auth=-javaagent:authlib-injector-1.2.7.jar=%AuthURL%"
 timeout /t 1
 @REM 第一次启动行为
 %FirstStart%
@@ -953,9 +954,9 @@ echo 请使用浏览器或下载器手动下载
 echo 下载完成后将文件放到与该批处理同一个目录下
 echo.
 echo BMCLAPI:
-echo https://bmclapi2.bangbang93.com/mirrors/authlib-injector/artifact/54/authlib-injector-1.2.6.jar
+echo https://bmclapi2.bangbang93.com/mirrors/authlib-injector/artifact/55/authlib-injector-1.2.7.jar
 echo 官方:
-echo https://authlib-injector.yushi.moe/artifact/54/authlib-injector-1.2.6.jar
+echo https://authlib-injector.yushi.moe/artifact/55/authlib-injector-1.2.7.jar
 echo.
 echo 请选择下载源:
 echo 键入"b"使用BMCLAPI下载源下载(PowerShell方案)
@@ -964,9 +965,9 @@ echo 键入"l"使用certutil方案从官方下载源下载(适用于PowerShell�
 echo 键入"u"返回上一级菜单
 echo 键入"x"退出批处理
 choice /C oblux /CS
-if %errorlevel% == 1 powershell -Command "Invoke-WebRequest -Uri https://bmclapi2.bangbang93.com/mirrors/authlib-injector/artifact/54/authlib-injector-1.2.6.jar -OutFile .\authlib-injector-1.2.6.jar" && goto AuthLibCheck
-if %errorlevel% == 2 powershell -Command "Invoke-WebRequest -Uri https://authlib-injector.yushi.moe/artifact/54/authlib-injector-1.2.6.jar -OutFile .\authlib-injector-1.2.6.jar" && goto AuthLibCheck
-if %errorlevel% == 3 certutil -urlcache -split -f https://authlib-injector.yushi.moe/artifact/54/authlib-injector-1.2.6.jar .\authlib-injector-1.2.6.jar && goto AuthLibCheck
+if %errorlevel% == 1 powershell -Command "Invoke-WebRequest -Uri https://bmclapi2.bangbang93.com/mirrors/authlib-injector/artifact/55/authlib-injector-1.2.7.jar -OutFile .\authlib-injector-1.2.7.jar" && goto AuthLibCheck
+if %errorlevel% == 2 powershell -Command "Invoke-WebRequest -Uri https://authlib-injector.yushi.moe/artifact/55/authlib-injector-1.2.7.jar -OutFile .\authlib-injector-1.2.7.jar" && goto AuthLibCheck
+if %errorlevel% == 3 certutil -urlcache -split -f https://authlib-injector.yushi.moe/artifact/55/authlib-injector-1.2.7.jar .\authlib-injector-1.2.7.jar && goto AuthLibCheck
 if %errorlevel% == 4 goto bc
 if %errorlevel% == 5 goto x
 color %colorError%
