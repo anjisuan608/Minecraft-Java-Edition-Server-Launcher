@@ -20,7 +20,7 @@ OpenAtom | [项目仓库](https://openatom.tech/anjisuan608/Minecraft-Java-Editi
 
 ## 核心列表
 
-[跳转至核心列表](#%E6%94%AF%E6%8C%81%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%A0%B8%E5%BF%83)
+[跳转至核心列表](#%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%A0%B8%E5%BF%83)
 
 ---
 <!-- 
